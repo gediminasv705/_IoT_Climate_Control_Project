@@ -7,8 +7,6 @@ body {
 	margin: 0;
 }
 
-
-
 .top-row{
     height: 300px;
 }
@@ -21,12 +19,13 @@ body {
     top: 0px;
     right: 0px;
     opacity:0.5;
+    position: absolute;
 }
 
-.user-settings ul{
-    padding: 5px;
-}
 
+.meniu {
+    margin: 0px;
+}
 
 .page-1{
     background-image: url(../images/winter2.jpg);
