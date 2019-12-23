@@ -1,0 +1,67 @@
+* {
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+
+
+.top-row{
+    height:300px;
+}
+
+
+.page-1{
+    background-image: url(../images/winter2.jpg);
+    width:100%;
+}
+
+.page-1 div .collection {
+    border: 0px;
+}
+
+
+.free-space {
+    height: 5000px;
+}
+
+.control-panel{
+    height:700px;
+}
+
+.settings-container{
+    height:600px;
+    width: 100%;
+}
+
+.settings{
+    height:600px;
+    width: 100%;
+    background-color: bisque;
+    opacity: 0.9;
+}
+
+.devices-container{
+    height: 600px;
+    padding: 0px;
+}
+
+.sensibo{
+    height: 290px;
+    width: 100%;
+    opacity: 0.9;
+    background-color: rgb(255, 196, 206);
+}
+
+
+.netatmo{
+    height:290px;
+    width: 100%;
+    background-color: rgb(196, 210, 255);
+    opacity: 0.9;
+}
+
+
