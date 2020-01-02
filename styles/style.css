@@ -7,6 +7,10 @@ body {
 	margin: 0;
 }
 
+p {
+    padding: 5px;
+}
+
 .top-row{
     height: 300px;
     display: flex;
@@ -21,12 +25,17 @@ body {
     background-color: white;
     top: 30px;
     right: 0px;
-    opacity:0.5;
     position: relative;
 }
 
 .user-settings a{
     padding-left: 5px;
+}
+
+.user-picture{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -45,10 +54,14 @@ body {
     border: 0px;
 }
 
+.info-summary {
+    opacity: 0.5;
+}
 
-.free-space {
-    height: 5000px;
-    background-color: rgb(221, 184, 184);
+
+.page-2 {
+    height:200vh;
+    background-color: rgb(156, 150, 248);
 }
 
 .control-panel{
@@ -57,26 +70,29 @@ body {
 
 .settings-container{
     height:600px;
-    width: 100%;
+    padding: -10px;
 }
 
-.settings{
-    height:600px;
-    width: 100%;
-    background-color: bisque;
-    opacity: 0.9;
-}
 
 .devices-container{
     height: 600px;
     padding: 0px;
+
+}
+
+.settings{
+    height:600px;
+    background-color: bisque;
+    opacity: 0.9;
+    margin-right: 20px;
 }
 
 .sensibo{
     height: 290px;
     width: 100%;
     opacity: 0.9;
-    background-color: rgb(255, 196, 206);
+    background-color: rgb(196, 236, 255);
+
 }
 
 
@@ -88,4 +104,7 @@ body {
     margin-top: 20px;
 }
 
+.netatmo p{
+    margin: 0;
+}
 
