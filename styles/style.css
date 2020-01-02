@@ -48,6 +48,7 @@ body {
 
 .free-space {
     height: 5000px;
+    background-color: rgb(221, 184, 184);
 }
 
 .control-panel{
