@@ -8,7 +8,8 @@ body {
 }
 
 p {
-    padding: 5px;
+    padding: 10px;
+
 }
 
 .top-row{
@@ -26,6 +27,9 @@ p {
     top: 30px;
     right: 0px;
     position: relative;
+    opacity: 0.4;
+    border-radius: 10px;
+    border: 2px solid orange;
 }
 
 .user-settings a{
@@ -41,6 +45,14 @@ p {
 
 .meniu {
     margin: 0px;
+    position: relative;
+}
+
+.meniu-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    /* Keičiu z indeksą, nes pasislepia po div apačia */
 }
 
 .page-1{
@@ -56,16 +68,21 @@ p {
 
 .info-summary {
     opacity: 0.5;
+    border-radius: 10px;
+    border: 2px solid orange;
+    height: 250px;
+    font-size: xx-large;
 }
 
 
 .page-2 {
-    height:200vh;
+    height:100vh;
     background-color: rgb(156, 150, 248);
 }
 
 .control-panel{
     height:700px;
+    border-radius: 10px;
 }
 
 .settings-container{
@@ -85,6 +102,8 @@ p {
     background-color: bisque;
     opacity: 0.9;
     margin-right: 20px;
+    border: 2px solid orange;
+    border-radius: 10px;
 }
 
 .sensibo{
@@ -92,19 +111,28 @@ p {
     width: 100%;
     opacity: 0.9;
     background-color: rgb(196, 236, 255);
+    border: 2px solid orange;
+    border-radius: 10px;
 
 }
 
 
-.netatmo{
+.netatmo {
     height:290px;
     width: 100%;
     background-color: rgb(196, 210, 255);
     opacity: 0.9;
     margin-top: 20px;
+    border: 2px solid orange;
+    border-radius: 10px;
 }
 
 .netatmo p{
     margin: 0;
 }
 
+.page-3 {
+
+    height:100vh;
+    background-color: khaki;
+}
