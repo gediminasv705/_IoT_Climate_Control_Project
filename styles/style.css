@@ -3,6 +3,10 @@
 	font-family: sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
 	margin: 0;
 }
@@ -23,11 +27,11 @@ p {
 .user-settings{
     height: 200px;
     width: 150px;
-    background-color: white;
-    top: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
     right: 0px;
+    transform: translateY(-50%);
+    top: 50%;
     position: relative;
-    opacity: 0.4;
     border-radius: 10px;
     border: 2px solid orange;
 }
@@ -55,10 +59,23 @@ p {
     /* Keičiu z indeksą, nes pasislepia po div apačia */
 }
 
+.search-bar {
+
+position: relative;
+top: 50px;
+
+}
+
+.nav-item-filter {
+    background-color: rgba(205, 207, 67, 0.4);
+}
+
+/* PAGE 1 */
+
 .page-1{
     background-image: url(../images/winter2.jpg);
     width:100%;
-    height:100vh;
+    min-height: 980px;
     background-size:cover;
 }
 
@@ -66,18 +83,179 @@ p {
     border: 0px;
 }
 
+.search-wrapper {
+
+    margin: 50px 0 50px 0;
+}
+
 .info-summary {
+    
     opacity: 0.5;
     border-radius: 10px;
     border: 2px solid orange;
-    height: 250px;
     font-size: xx-large;
+    position: relative;
+}
+
+/* PAGE 1 */
+
+/* PAGE 2 */
+
+.page-2 {
+    padding-top: 64px; 
+    min-height: 980px;
+    background-color: rgb(156, 150, 248);
+    display: flex;
+    align-items: center;
+}
+
+.settings-grid {
+
+    display: grid;
+    padding: 50px 0 50px 0;
+    height: 800px;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+      "settings sensibo"
+      "settings netatmo";
+    align-content: stretch;
+}
+
+.settings-wrapper {
+    grid-area: settings;
+    background-color:whitesmoke;
+    border-radius: 10px;
+    border: 2px solid orange;
+}
+
+.sensibo-wrapper {
+    grid-area: sensibo;
+    background-color:whitesmoke;
+    border-radius: 10px;
+    border: 2px solid orange;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 15% 25%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+      "sensibo-logo sensibo-logo sensibo-logo sensibo-indication"
+      "sensibo-status sensibo-status . sensibo-status-res"
+      "sensibo-measured-temp sensibo-measured-temp . ."
+      "sensibo-measured-temp sensibo-measured-temp . ."
+      "sensibo-humidity . . ."
+      "sensibo-mode sensibo-mode . sensibo-mode-res"
+      "sensibo-set-temp sensibo-set-temp . sensibo-set-temp-res"
+      "sensibo-fan-level sensibo-fan-level . sensibo-fan-level-res"
+      "sensibo-log sensibo-log-res sensibo-log-res sensibo-log-res";
+}
+
+.sensibo-wrapper p{
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    font-size: 20px;
+
+}
+
+.sensibo-logo {
+    grid-area: sensibo-logo;
+    background-color:rgb(211, 223, 159);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sensibo-logo h5 {
+    margin: 0;
+    padding: 0;
+}
+.sensibo-indication {
+    grid-area: sensibo-indication;
+    background-color:rgb(211, 223, 159);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.sensibo-status {
+    grid-area: sensibo-status;
+    background-color:rgb(211, 223, 159);
+}
+
+.sensibo-status-res {
+    grid-area: sensibo-status-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.sensibo-measured-temp {
+    grid-area: sensibo-measured-temp;
+    background-color:rgb(211, 223, 159);
+}
+
+.sensibo-measured-temp p{
+
+    font-size: 50px;
+    margin: 0;
+}
+.sensibo-humidity {
+    grid-area: sensibo-humidity;
+    background-color:rgb(211, 223, 159);
+}
+.sensibo-mode {
+    grid-area: sensibo-mode;
+    background-color:rgb(211, 223, 159);
+}
+.sensibo-mode-res {
+    grid-area: sensibo-mode-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sensibo-set-temp {
+    grid-area: sensibo-set-temp;
+    background-color:rgb(211, 223, 159);
+}
+.sensibo-set-temp-res {
+    grid-area: sensibo-set-temp-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sensibo-fan-level {
+    grid-area: sensibo-fan-level;
+    background-color:rgb(211, 223, 159);
+}
+.sensibo-fan-level-res {
+    grid-area: sensibo-fan-level-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sensibo-log {
+    grid-area: sensibo-log;
+    background-color:rgb(211, 223, 159);
+}
+.sensibo-log-res {
+    grid-area: sensibo-log-res;
+    background-color:rgb(211, 223, 159);
 }
 
 
-.page-2 {
-    height:100vh;
-    background-color: rgb(156, 150, 248);
+
+
+.netatmo-wrapper {
+    grid-area: netatmo;
+    background-color:whitesmoke;
+    border-radius: 10px;
+    border: 2px solid orange;
 }
 
 .control-panel{
@@ -97,42 +275,69 @@ p {
 
 }
 
-.settings{
-    height:600px;
-    background-color: bisque;
-    opacity: 0.9;
-    margin-right: 20px;
-    border: 2px solid orange;
-    border-radius: 10px;
-}
 
-.sensibo{
-    height: 290px;
-    width: 100%;
-    opacity: 0.9;
-    background-color: rgb(196, 236, 255);
-    border: 2px solid orange;
-    border-radius: 10px;
-
-}
+/* PAGE 2 */
 
 
-.netatmo {
-    height:290px;
-    width: 100%;
-    background-color: rgb(196, 210, 255);
-    opacity: 0.9;
-    margin-top: 20px;
-    border: 2px solid orange;
-    border-radius: 10px;
-}
-
-.netatmo p{
-    margin: 0;
-}
+/* PAGE 3 */
 
 .page-3 {
-
-    height:100vh;
+    padding-top: 64px; 
+    min-height: 980px;
     background-color: khaki;
+    display: flex;
+    align-items: center;
 }
+
+.graph-area{
+ background-color: rgb(255, 208, 205);
+ height: 800px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 10px;
+border: 2px solid orange;
+ 
+}
+
+
+.page-4 {
+    padding-top: 64px; 
+    min-height: 980px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+}
+
+.about-us{
+    background-color: rgb(255, 208, 205);
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+   border: 2px solid orange;
+    
+   }
+
+.page-5 {
+    padding-top: 64px; 
+    min-height: 980px;
+    background-color: rgb(240, 196, 196);
+}
+
+.user-review {
+}
+
+.free-space {
+
+    height: 500px;
+    background-image: url(../images/winter2.jpg);
+    width:100%;
+    background-size:cover;
+    filter: grayscale(80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

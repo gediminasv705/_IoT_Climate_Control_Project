@@ -61,11 +61,11 @@
 
                         <div class="meniu collection right">
                             <ul>
-                                <li><a href="#page-1">Page 1</a></li>
-                                <li><a href="#page-2">Page 2</a></li>
-                                <li><a href="#page-3">Page 3</a></li>
-                                <li><a href="#">Meniu item 4</a></li>
-                                <li><a href="#">Meniu item 5</a></li>
+                                <li><a id="page-1-nav" href="#page-1">Home</a></li>
+                                <li id="page-2-nav"><a href="#page-2">Settings</a></li>
+                                <li id="page-3-nav"><a href="#page-3">Graph</a></li>
+                                <li id="page-4-nav"><a href="#page-4">About us</a></li>
+                                <li id="page-5-nav"><a href="#page-5">contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -76,13 +76,29 @@
 
 
             <div class="container">
-            <div>
-                <p class="white info-summary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora dolore assumenda odit placeat, fuga dignissimos consequuntur minima omnis molestiae, similique suscipit alias numquam nulla id rerum. Soluta odit officia velit..
-                    consequuntur minima omnis molae, similla id rerum. Soluta odit officia velit..
-                </p>
+
+                <nav class="transparent search-wrapper">
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field">
+                                <input id="search" type="search" required>
+                                <label for="search" class="label-icon"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+
+                <div>
+                    <p class="white info-summary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                        dolore assumenda odit placeat, fuga dignissimos consequuntur minima omnis molestiae, similique
+                        suscipit alias numquam nulla id rerum. Soluta odit officia velit..
+                        consequuntur minima omnis molae, similla id rerum. Soluta odit officia velit..
+                    </p>
+
+                </div>
             </div>
-        </div>
-    
+
         </header>
 
 
@@ -93,44 +109,122 @@
 
     <div id="page-2" class="page-2">
 
-        <div class="container control-panel valign-wrapper">
+        <div class="container settings-grid">
+            <div class="settings-wrapper"></div>
+            <div class="sensibo-wrapper">
 
-            <div class="settings-container col s6">
-                <div class="settings">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dignissimos possimus, cum modi
-                        deleniti tempore at culpa? Eligendi numquam eum, voluptate, vero tempore modi a maxime iste
-                        velit, quas ducimus.</p>
+                <div class="sensibo-logo">
+                    <h5>Sensibo LOGO</h5>
                 </div>
+                <div class="sensibo-indication">
+                    <i class="small material-icons green-text">power_settings_new</i>
+                </div>
+                <div class="sensibo-status">
+                    <p>Device connection status</p>
+                </div>
+                <div class="sensibo-status-res">
+                    <p>Online</p>
+                </div>
+                <div class="sensibo-measured-temp">
+                    <p>35C</p>
+                </div>
+                <div class="sensibo-humidity">
+                    <p>35%</p>
+                </div>
+                <div class="sensibo-mode">
+                    <p>Sensibo mode</p>
+                </div>
+                <div class="sensibo-mode-res"><p>Auto</p></div>
+                <div class="sensibo-set-temp"><p>Sensibo set temperature</p></div>
+                <div class="sensibo-set-temp-res"><p>24C</p></div>
+                <div class="sensibo-fan-level"><p>Sensibo fan level</p></div>
+                <div class="sensibo-fan-level-res"><p>Medium</p></div>
+                <div class="sensibo-log"><p>Log</p></div>
+                <div class="sensibo-log-res"><p>[2019_02_15]: Temperature changed to 24C</p></div>
+
             </div>
-
-
-            <div class="devices-container col s6">
-
-                <div class="sensibo">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dignissimos possimus, cum modi
-                        deleniti tempore at culpa? Eligendi numquam eum, voluptate, vero tempore modi a maxime iste
-                        velit, quas ducimus.</p>
-                </div>
-
-                <div class="netatmo">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dignissimos possimus, cum modi
-                        deleniti tempore at culpa? Eligendi numquam eum, voluptate, vero tempore modi a maxime iste
-                        velit, quas ducimus.</p>
-                </div>
-            </div>
-
+            <div class="netatmo-wrapper"></div>
         </div>
-
-
-
-
-
 
     </div>
 
     <div id="page-3" class="page-3">
 
-        
+        <div class="container">
+            <div class="graph-area">
+                <h3>This is graph area</h3>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="page-4" class="page-4">
+
+        <div class="container">
+            <div class="about-us">
+                <h3>Information about us</h3>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="page-5" class="page-5">
+
+
+        <div class="container user-review">
+
+            <h2>Contact Us</h2>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Please write me your best wishes</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect orange darken-4" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+
+            </form>
+
+            <div>
+                <a href="#">
+                    <h1><i class="large material-icons">beach_access</i>G climate</h1>
+                </a>
+                <h3 class="orange-text">Perfect climate no matter the weather</h3>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="free-space">
+
+        <div class="container">
+            <h5>No rights reserved. I would be happy if someone took it for free.</h5>
+        </div>
+
     </div>
 
 
