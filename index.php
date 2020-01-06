@@ -19,6 +19,8 @@
 
 <body>
 
+
+
     <div id="page-1" class="page-1">
 
         <header>
@@ -32,6 +34,7 @@
                         <h1><i class="large material-icons">beach_access</i>G climate</h1>
                     </a>
                     <h3 class="orange-text">Perfect climate no matter the weather</h3>
+                    <h4><?php echo date('l, F jS, Y'); ?></h4>
                 </div>
 
                 <div class="user-settings">
@@ -61,7 +64,7 @@
 
                         <div class="meniu collection right">
                             <ul>
-                                <li><a id="page-1-nav" href="#page-1">Home</a></li>
+                                <li id="page-1-nav"><a href="#page-1">Home</a></li>
                                 <li id="page-2-nav"><a href="#page-2">Settings</a></li>
                                 <li id="page-3-nav"><a href="#page-3">Graph</a></li>
                                 <li id="page-4-nav"><a href="#page-4">About us</a></li>
@@ -123,24 +126,72 @@
                     <p>Device connection status</p>
                 </div>
                 <div class="sensibo-status-res">
-                    <p>Online</p>
+
+                <p>
+                <?php include 'scripts/code.php';
+                echo $sensibo_status;
+                ?>
+                </p>
+
                 </div>
                 <div class="sensibo-measured-temp">
-                    <p>35C</p>
+                    <p>   <?php 
+
+                echo ($sensibo_measured_temp . "°" . $sensibo_target_temp_unit);
+
+                ?></p>
                 </div>
                 <div class="sensibo-humidity">
-                    <p>35%</p>
+                    <p>  
+                        <?php 
+
+                            echo ($sensibo_measured_humidity . " %");
+
+                        ?>
+                    </p>
                 </div>
                 <div class="sensibo-mode">
                     <p>Sensibo mode</p>
                 </div>
-                <div class="sensibo-mode-res"><p>Auto</p></div>
-                <div class="sensibo-set-temp"><p>Sensibo set temperature</p></div>
-                <div class="sensibo-set-temp-res"><p>24C</p></div>
+                <div class="sensibo-mode-res">
+                    <p>   
+                        <?php 
+
+                            echo ($sensibo_mode);
+
+                         ?>
+                    </p>
+                </div>
+                <div class="sensibo-set-temp"><p>Target temperature</p></div>
+                <div class="sensibo-set-temp-res">
+                    <p>   
+                        <?php 
+
+                            echo ($sensibo_target_temp . " " . $sensibo_target_temp_unit);
+
+                         ?>
+                    </p>
+                </div>
                 <div class="sensibo-fan-level"><p>Sensibo fan level</p></div>
-                <div class="sensibo-fan-level-res"><p>Medium</p></div>
-                <div class="sensibo-log"><p>Log</p></div>
-                <div class="sensibo-log-res"><p>[2019_02_15]: Temperature changed to 24C</p></div>
+                <div class="sensibo-fan-level-res">
+                <p>   
+                        <?php 
+
+                            echo ($sensibo_fan_level);
+
+                         ?>
+                    </p>
+                </div>
+                <div class="sensibo-failure-reason"><p>Failure reason</p></div>
+                <div class="sensibo-failure-reason-res">
+                    <p>   
+                        <?php 
+
+                            $sensibo_failure_reason;
+
+                         ?>
+                    </p>
+                </div>
 
             </div>
             <div class="netatmo-wrapper"></div>

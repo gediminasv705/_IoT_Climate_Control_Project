@@ -150,7 +150,7 @@ top: 50px;
       "sensibo-mode sensibo-mode . sensibo-mode-res"
       "sensibo-set-temp sensibo-set-temp . sensibo-set-temp-res"
       "sensibo-fan-level sensibo-fan-level . sensibo-fan-level-res"
-      "sensibo-log sensibo-log-res sensibo-log-res sensibo-log-res";
+      "sensibo-failure-reason sensibo-failure-reason-res sensibo-failure-reason-res sensibo-failure-reason-res";
 }
 
 .sensibo-wrapper p{
@@ -241,12 +241,12 @@ top: 50px;
     justify-content: center;
 }
 
-.sensibo-log {
-    grid-area: sensibo-log;
+.sensibo-failure-reason {
+    grid-area: sensibo-failure-reason;
     background-color:rgb(211, 223, 159);
 }
-.sensibo-log-res {
-    grid-area: sensibo-log-res;
+.sensibo-failure-reason-res {
+    grid-area: sensibo-failure-reason-res;
     background-color:rgb(211, 223, 159);
 }
 
