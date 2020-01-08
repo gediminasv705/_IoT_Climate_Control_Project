@@ -25,9 +25,21 @@ p {
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 600px) {
+    .top-row h1{
+        display: none;
+    }
+    .top-row h3{
+        display: none;
+    }
+    .top-row h4{
+        display: none;
+    }
+}
+
 
 .user-settings{
-    height: 200px;
+    height: 70%;
     width: 150px;
     background-color: rgba(255, 255, 255, 0.4);
     right: 0px;
@@ -36,6 +48,18 @@ p {
     position: relative;
     border-radius: 10px;
     border: 2px solid orange;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+.user-settings{
+    height: 90%;
+    width: 80%;
+    display: block;
+    font-size: 20px;
+    }
 }
 
 .user-settings a{
@@ -54,11 +78,32 @@ p {
     position: relative;
 }
 
+.meniu a{
+    font-size: large;
+}
+
+
 .meniu-fixed {
     position: fixed;
     top: 0;
     z-index: 10;
     /* Keičiu z indeksą, nes pasislepia po div apačia */
+}
+
+@media only screen and (max-width: 600px) {
+
+ #navbar {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+#navbar-logo {
+    display: none;
+}
 }
 
 .search-bar {
@@ -112,10 +157,9 @@ top: 50px;
 }
 
 .settings-grid {
-
+    
     display: grid;
     padding: 50px 0 50px 0;
-    height: 800px;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -123,7 +167,35 @@ top: 50px;
       "settings sensibo"
       "settings netatmo";
     align-content: stretch;
-}
+    }
+
+@media only screen and (max-width: 1000px) {
+    .settings-grid {
+                
+    display: grid;
+    padding: 50px 0 50px 0;
+    grid-gap: 100px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "settings"
+        "sensibo"
+        "netatmo";
+        } 
+    }
+
+@media only screen and (max-width: 600px) {
+    .settings-grid {
+            
+    display: grid;
+    padding: 50px 0 50px 0;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "settings"
+        "sensibo"
+        "netatmo";
+        } 
+    }
 
 .settings-wrapper {
     grid-area: settings;
@@ -133,6 +205,9 @@ top: 50px;
 }
 
 .sensibo-wrapper {
+
+    box-sizing: border-box;
+    padding: 10px;
     grid-area: sensibo;
     background-color:whitesmoke;
     border-radius: 10px;
@@ -140,7 +215,7 @@ top: 50px;
     max-height: 100%;
     display: grid;
     grid-template-columns: 30% 30% 15% 25%;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
       "sensibo-logo sensibo-logo sensibo-logo sensibo-indication"
       "sensibo-status sensibo-status . sensibo-status-res"
@@ -150,8 +225,9 @@ top: 50px;
       "sensibo-mode sensibo-mode . sensibo-mode-res"
       "sensibo-set-temp sensibo-set-temp . sensibo-set-temp-res"
       "sensibo-fan-level sensibo-fan-level . sensibo-fan-level-res"
-      "sensibo-failure-reason sensibo-failure-reason-res sensibo-failure-reason-res sensibo-failure-reason-res";
+      "sensibo-failure-reason . sensibo-failure-reason-res sensibo-failure-reason-res";
 }
+
 
 .sensibo-wrapper p{
     margin: 0;

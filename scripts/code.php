@@ -17,8 +17,9 @@ $sensibo_mode = $sensibo_json['result']['0']['acState']['mode'];
 $sensibo_fan_level = $sensibo_json['result']['0']['acState']['fanLevel'];
 $sensibo_changed_properties =  $sensibo_json['result']['0']['changedProperties'];
 
-$sensibo_failure_reason = function(){
-    if ($sensibo_json['result']['0']['failureReason'] == null) {
+
+ function sensibo_failure_reason(){
+    if ( empty($sensibo_json['result']['0']['failureReason'])) {
 
          echo "No failures detected";
 
@@ -27,6 +28,7 @@ $sensibo_failure_reason = function(){
         echo $sensibo_json['result']['0']['failureReason'];
     }
 }
+
 ;
 
 $sensibo_measured_temp = $measurements_json['result']['0']['temperature'];

@@ -30,7 +30,7 @@
             <div class="container top-row">
 
                 <div>
-                    <a href="#">
+                    <a href="netatmo_html.php">
                         <h1><i class="large material-icons">beach_access</i>G climate</h1>
                     </a>
                     <h3 class="orange-text">Perfect climate no matter the weather</h3>
@@ -60,7 +60,7 @@
 
                     <div class="container">
 
-                        <a href="#" class="brand-logo left"><i class="material-icons">beach_access</i>G climate</a>
+                        <a id="navbar-logo" href="#" class="brand-logo left"><i class="material-icons">beach_access</i>G climate</a>
 
                         <div class="meniu collection right">
                             <ul>
@@ -127,25 +127,25 @@
                 </div>
                 <div class="sensibo-status-res">
 
-                <p>
-                <?php include 'scripts/code.php';
-                echo $sensibo_status;
-                ?>
-                </p>
+                    <p>
+                        <?php include 'scripts/code.php';
+                        echo $sensibo_status;
+                        ?>
+                    </p>
 
                 </div>
                 <div class="sensibo-measured-temp">
-                    <p>   <?php 
+                    <p> <?php
 
-                echo ($sensibo_measured_temp . "°" . $sensibo_target_temp_unit);
+                        echo ($sensibo_measured_temp . "°" . $sensibo_target_temp_unit);
 
-                ?></p>
+                        ?></p>
                 </div>
                 <div class="sensibo-humidity">
-                    <p>  
-                        <?php 
+                    <p>
+                        <?php
 
-                            echo ($sensibo_measured_humidity . " %");
+                        echo ($sensibo_measured_humidity . "%");
 
                         ?>
                     </p>
@@ -154,47 +154,59 @@
                     <p>Sensibo mode</p>
                 </div>
                 <div class="sensibo-mode-res">
-                    <p>   
-                        <?php 
+                    <p>
+                        <?php
 
-                            echo ($sensibo_mode);
+                        echo ($sensibo_mode);
 
-                         ?>
+                        ?>
                     </p>
                 </div>
-                <div class="sensibo-set-temp"><p>Target temperature</p></div>
+                <div class="sensibo-set-temp">
+                    <p>Target temperature</p>
+                </div>
                 <div class="sensibo-set-temp-res">
-                    <p>   
-                        <?php 
+                    <p>
+                        <?php
 
-                            echo ($sensibo_target_temp . " " . $sensibo_target_temp_unit);
+                        echo ($sensibo_target_temp . " " . $sensibo_target_temp_unit);
 
-                         ?>
+                        ?>
                     </p>
                 </div>
-                <div class="sensibo-fan-level"><p>Sensibo fan level</p></div>
+                <div class="sensibo-fan-level">
+                    <p>Sensibo fan level</p>
+                </div>
                 <div class="sensibo-fan-level-res">
-                <p>   
-                        <?php 
+                    <p>
+                        <?php
 
-                            echo ($sensibo_fan_level);
+                        echo ($sensibo_fan_level);
 
-                         ?>
+                        ?>
                     </p>
                 </div>
-                <div class="sensibo-failure-reason"><p>Failure reason</p></div>
+                <div class="sensibo-failure-reason">
+                    <p>Failure reason</p>
+                </div>
                 <div class="sensibo-failure-reason-res">
-                    <p>   
-                        <?php 
+                    <p>
+                        
+                        <?php
 
-                            $sensibo_failure_reason;
+                        sensibo_failure_reason();
 
-                         ?>
+                        ?>
                     </p>
                 </div>
 
             </div>
-            <div class="netatmo-wrapper"></div>
+            <div class="netatmo-wrapper"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perspiciatis deserunt necessitatibus cupiditate impedit minima delectus reprehenderit ut ex asperiores numquam eaque, aperiam nemo? Beatae dolor eos corporis illo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perspiciatis deserunt necessitatibus cupiditate impedit minima delectus reprehenderit ut ex asperiores numquam eaque, aperiam nemo? Beatae dolor eos corporis illo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perspiciatis deserunt necessitatibus cupiditate impedit minima delectus reprehenderit ut ex asperiores numquam eaque, aperiam nemo? Beatae dolor eos corporis illo.</p>
+            
+            </div>
+            
         </div>
 
     </div>
@@ -226,8 +238,8 @@
 
         <div class="container user-review">
 
-            <h2>Contact Us</h2>
             <form class="col s12">
+            <h2>Contact Us</h2>
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="first_name" type="text" class="validate">
@@ -270,19 +282,21 @@
 
     </div>
 
-    <div class="free-space">
+    <footer class="free-space">
 
         <div class="container">
             <h5>No rights reserved. I would be happy if someone took it for free.</h5>
         </div>
 
-    </div>
+</footer>
 
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>M.AutoInit()</script>
+    <script>
+        M.AutoInit()
+    </script>
     <script src="scripts/script.js"></script>
 </body>
 
