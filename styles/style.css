@@ -41,7 +41,7 @@ p {
 .user-settings{
     height: 70%;
     width: 150px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.7);
     right: 0px;
     transform: translateY(-50%);
     top: 50%;
@@ -72,6 +72,10 @@ p {
     justify-content: center;
 }
 
+.login {
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 50;
+}
 
 .meniu {
     margin: 0px;
@@ -202,6 +206,7 @@ top: 50px;
     background-color:whitesmoke;
     border-radius: 10px;
     border: 2px solid orange;
+    padding: 50px;
 }
 
 .sensibo-wrapper {
@@ -349,7 +354,7 @@ top: 50px;
       "netatmo-humidity . . ."
       "netatmo-mode netatmo-mode . netatmo-mode-res"
       "netatmo-set-temp netatmo-set-temp . netatmo-set-temp-res"
-      "netatmo-fan-level netatmo-fan-level . netatmo-fan-level-res"
+      "netatmo-battery-level netatmo-battery-level . netatmo-battery-level-res"
       "netatmo-failure-reason . netatmo-failure-reason-res netatmo-failure-reason-res";
 
 }
@@ -364,7 +369,7 @@ top: 50px;
 
 .netatmo-logo {
     grid-area: netatmo-logo;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
     display:flex;
     align-items: center;
     justify-content: center;
@@ -376,19 +381,19 @@ top: 50px;
 }
 .netatmo-indication {
     grid-area: netatmo-indication;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
     display:flex;
     align-items: center;
     justify-content: center;
 }
 .netatmo-status {
     grid-area: netatmo-status;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 
 .netatmo-status-res {
     grid-area: netatmo-status-res;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -396,7 +401,7 @@ top: 50px;
 }
 .netatmo-measured-temp {
     grid-area: netatmo-measured-temp;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 
 .netatmo-measured-temp p{
@@ -406,37 +411,37 @@ top: 50px;
 }
 .netatmo-humidity {
     grid-area: netatmo-humidity;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 .netatmo-mode {
     grid-area: netatmo-mode;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 .netatmo-mode-res {
     grid-area: netatmo-mode-res;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .netatmo-set-temp {
     grid-area: netatmo-set-temp;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 .netatmo-set-temp-res {
     grid-area: netatmo-set-temp-res;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.netatmo-fan-level {
-    grid-area: netatmo-fan-level;
-    background-color:rgb(211, 223, 159);
+.netatmo-battery-level {
+    grid-area: netatmo-battery-level;
+    background-color:rgb(243, 229, 152);
 }
-.netatmo-fan-level-res {
-    grid-area: netatmo-fan-level-res;
-    background-color:rgb(211, 223, 159);
+.netatmo-battery-level-res {
+    grid-area: netatmo-battery-level-res;
+    background-color:rgb(243, 229, 152);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -444,11 +449,11 @@ top: 50px;
 
 .netatmo-failure-reason {
     grid-area: netatmo-failure-reason;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 .netatmo-failure-reason-res {
     grid-area: netatmo-failure-reason-res;
-    background-color:rgb(211, 223, 159);
+    background-color:rgb(243, 229, 152);
 }
 
 

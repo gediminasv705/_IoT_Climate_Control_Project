@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/script.js"></script>
-</head>
 
-<!-- testing testing testing -->
+</head>
 
 <body>
 
+<?php
+    include ('scripts/netatmo.php');
+    include ('scripts/sensibo_info.php');
+?>
 
 
     <div id="page-1" class="page-1">
@@ -92,12 +94,40 @@
                     </div>
                 </nav>
 
-                <div>
-                    <p class="white info-summary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
-                        dolore assumenda odit placeat, fuga dignissimos consequuntur minima omnis molestiae, similique
-                        suscipit alias numquam nulla id rerum. Soluta odit officia velit..
-                        consequuntur minima omnis molae, similla id rerum. Soluta odit officia velit..
-                    </p>
+                <div class="login">
+                <form method="post" action="">
+                    <h5>Sensibo Login</h5>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="sensibo" type="text" name="sensibo" class="validate">
+                            <label for="sensibo" class="orange-text text-darken-4">Sensibo API key</label>
+                        </div>
+
+                    </div>
+                    <button class="btn waves-effect orange darken-4" type="submit" name="action">Sensibo login
+                        <i class="material-icons right">lock_open</i>
+                    </button>
+                </form>
+                <form method="post" action="">
+                    <h5>Netatmo Login</h5>
+
+                    <div class="row">
+
+                        <div class="input-field col s6">
+                            <input id="email" name="email" type="email" class="validate">
+                            <label for="email" class="orange-text text-darken-4">Email</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="password" name="password" type="password" class="validate">
+                            <label for="password" class="orange-text text-darken-4">Password</label>
+                        </div>
+
+                    </div>
+                    <button class="btn waves-effect orange darken-4" type="submit" name="action">netatmo login
+                        <i class="material-icons right">lock_open</i>
+                    </button>
+                </form>
 
                 </div>
             </div>
@@ -113,7 +143,15 @@
     <div id="page-2" class="page-2">
 
         <div class="container settings-grid">
-            <div class="settings-wrapper"></div>
+
+            <div class="settings-wrapper">
+
+            Temp. set to: <input type="button" method="post" name="temp_20" value="20"></br></br>
+            Temp. set to: <input type="button" value="30"></br></br>
+            Temp. set to: <input type="button" value="22">
+
+            </div>
+
             <div class="sensibo-wrapper">
 
                 <div class="sensibo-logo">
@@ -128,7 +166,7 @@
                 <div class="sensibo-status-res">
 
                     <p>
-                        <?php include 'scripts/sensibo_info.php';
+                        <?php
                         echo $sensibo_status;
                         ?>
                     </p>
@@ -191,7 +229,7 @@
                 </div>
                 <div class="sensibo-failure-reason-res">
                     <p>
-                        
+
                         <?php
 
                         sensibo_failure_reason();
@@ -202,8 +240,8 @@
 
             </div>
             <div class="netatmo-wrapper">
-            
-            <div class="netatmo-logo">
+
+                <div class="netatmo-logo">
                     <h5>Netatmo LOGO</h5>
                 </div>
                 <div class="netatmo-indication">
@@ -215,37 +253,30 @@
                 <div class="netatmo-status-res">
 
                     <p>
-                        <?php 
-                        echo $sensibo_status;
+                        <?php
+                        echo $status;
                         ?>
                     </p>
 
                 </div>
+
                 <div class="netatmo-measured-temp">
                     <p> <?php
-
-                        echo ($sensibo_measured_temp . "°" . $sensibo_target_temp_unit);
-
+                        echo $received_measured_temp . "°C";
                         ?></p>
                 </div>
                 <div class="netatmo-humidity">
                     <p>
-                        <?php
 
-                        echo ($sensibo_measured_humidity . "%");
-
-                        ?>
                     </p>
                 </div>
                 <div class="netatmo-mode">
-                    <p>Sensibo mode</p>
+                    <p>Control mode</p>
                 </div>
                 <div class="netatmo-mode-res">
                     <p>
                         <?php
-
-                        echo ($sensibo_mode);
-
+                        echo $received_mode;
                         ?>
                     </p>
                 </div>
@@ -256,19 +287,19 @@
                     <p>
                         <?php
 
-                        echo ($sensibo_target_temp . " " . $sensibo_target_temp_unit);
+                        echo ($received_set_temp . " C");
 
                         ?>
                     </p>
                 </div>
-                <div class="netatmo-fan-level">
-                    <p>Sensibo fan level</p>
+                <div class="netatmo-battery-level">
+                    <p>Battery level</p>
                 </div>
-                <div class="netatmo-fan-level-res">
+                <div class="netatmo-battery-level-res">
                     <p>
                         <?php
 
-                        echo ($sensibo_fan_level);
+                        echo $received_battery_level;
 
                         ?>
                     </p>
@@ -278,17 +309,17 @@
                 </div>
                 <div class="netatmo-failure-reason-res">
                     <p>
-                        
+
                         <?php
 
                         sensibo_failure_reason();
 
                         ?>
                     </p>
-                </div> 
-            
+                </div>
+
             </div>
-            
+
         </div>
 
     </div>
@@ -321,7 +352,7 @@
         <div class="container user-review">
 
             <form class="col s12">
-            <h2>Contact Us</h2>
+                <h2>Contact Us</h2>
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="first_name" type="text" class="validate">
@@ -370,7 +401,7 @@
             <h5>No rights reserved. I would be happy if someone took it for free.</h5>
         </div>
 
-</footer>
+    </footer>
 
 
 
