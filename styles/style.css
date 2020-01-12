@@ -330,11 +330,127 @@ top: 50px;
 
 
 .netatmo-wrapper {
+
+    box-sizing: border-box;
+    padding: 10px;
     grid-area: netatmo;
     background-color:whitesmoke;
     border-radius: 10px;
     border: 2px solid orange;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 15% 25%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "netatmo-logo netatmo-logo netatmo-logo netatmo-indication"
+      "netatmo-status netatmo-status . netatmo-status-res"
+      "netatmo-measured-temp netatmo-measured-temp . ."
+      "netatmo-measured-temp netatmo-measured-temp . ."
+      "netatmo-humidity . . ."
+      "netatmo-mode netatmo-mode . netatmo-mode-res"
+      "netatmo-set-temp netatmo-set-temp . netatmo-set-temp-res"
+      "netatmo-fan-level netatmo-fan-level . netatmo-fan-level-res"
+      "netatmo-failure-reason . netatmo-failure-reason-res netatmo-failure-reason-res";
+
 }
+
+.netatmo-wrapper p{
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    font-size: 20px;
+
+}
+
+.netatmo-logo {
+    grid-area: netatmo-logo;
+    background-color:rgb(211, 223, 159);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.netatmo-logo h5 {
+    margin: 0;
+    padding: 0;
+}
+.netatmo-indication {
+    grid-area: netatmo-indication;
+    background-color:rgb(211, 223, 159);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.netatmo-status {
+    grid-area: netatmo-status;
+    background-color:rgb(211, 223, 159);
+}
+
+.netatmo-status-res {
+    grid-area: netatmo-status-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.netatmo-measured-temp {
+    grid-area: netatmo-measured-temp;
+    background-color:rgb(211, 223, 159);
+}
+
+.netatmo-measured-temp p{
+
+    font-size: 50px;
+    margin: 0;
+}
+.netatmo-humidity {
+    grid-area: netatmo-humidity;
+    background-color:rgb(211, 223, 159);
+}
+.netatmo-mode {
+    grid-area: netatmo-mode;
+    background-color:rgb(211, 223, 159);
+}
+.netatmo-mode-res {
+    grid-area: netatmo-mode-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.netatmo-set-temp {
+    grid-area: netatmo-set-temp;
+    background-color:rgb(211, 223, 159);
+}
+.netatmo-set-temp-res {
+    grid-area: netatmo-set-temp-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.netatmo-fan-level {
+    grid-area: netatmo-fan-level;
+    background-color:rgb(211, 223, 159);
+}
+.netatmo-fan-level-res {
+    grid-area: netatmo-fan-level-res;
+    background-color:rgb(211, 223, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.netatmo-failure-reason {
+    grid-area: netatmo-failure-reason;
+    background-color:rgb(211, 223, 159);
+}
+.netatmo-failure-reason-res {
+    grid-area: netatmo-failure-reason-res;
+    background-color:rgb(211, 223, 159);
+}
+
 
 .control-panel{
     height:700px;

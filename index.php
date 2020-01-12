@@ -128,7 +128,7 @@
                 <div class="sensibo-status-res">
 
                     <p>
-                        <?php include 'scripts/sensibo.php';
+                        <?php include 'scripts/sensibo_info.php';
                         echo $sensibo_status;
                         ?>
                     </p>
@@ -201,9 +201,91 @@
                 </div>
 
             </div>
-            <div class="netatmo-wrapper"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perspiciatis deserunt necessitatibus cupiditate impedit minima delectus reprehenderit ut ex asperiores numquam eaque, aperiam nemo? Beatae dolor eos corporis illo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perspiciatis deserunt necessitatibus cupiditate impedit minima delectus reprehenderit ut ex asperiores numquam eaque, aperiam nemo? Beatae dolor eos corporis illo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perspiciatis deserunt necessitatibus cupiditate impedit minima delectus reprehenderit ut ex asperiores numquam eaque, aperiam nemo? Beatae dolor eos corporis illo.</p>
+            <div class="netatmo-wrapper">
+            
+            <div class="netatmo-logo">
+                    <h5>Netatmo LOGO</h5>
+                </div>
+                <div class="netatmo-indication">
+                    <i class="small material-icons green-text">power_settings_new</i>
+                </div>
+                <div class="netatmo-status">
+                    <p>Device connection status</p>
+                </div>
+                <div class="netatmo-status-res">
+
+                    <p>
+                        <?php 
+                        echo $sensibo_status;
+                        ?>
+                    </p>
+
+                </div>
+                <div class="netatmo-measured-temp">
+                    <p> <?php
+
+                        echo ($sensibo_measured_temp . "°" . $sensibo_target_temp_unit);
+
+                        ?></p>
+                </div>
+                <div class="netatmo-humidity">
+                    <p>
+                        <?php
+
+                        echo ($sensibo_measured_humidity . "%");
+
+                        ?>
+                    </p>
+                </div>
+                <div class="netatmo-mode">
+                    <p>Sensibo mode</p>
+                </div>
+                <div class="netatmo-mode-res">
+                    <p>
+                        <?php
+
+                        echo ($sensibo_mode);
+
+                        ?>
+                    </p>
+                </div>
+                <div class="netatmo-set-temp">
+                    <p>Target temperature</p>
+                </div>
+                <div class="netatmo-set-temp-res">
+                    <p>
+                        <?php
+
+                        echo ($sensibo_target_temp . " " . $sensibo_target_temp_unit);
+
+                        ?>
+                    </p>
+                </div>
+                <div class="netatmo-fan-level">
+                    <p>Sensibo fan level</p>
+                </div>
+                <div class="netatmo-fan-level-res">
+                    <p>
+                        <?php
+
+                        echo ($sensibo_fan_level);
+
+                        ?>
+                    </p>
+                </div>
+                <div class="netatmo-failure-reason">
+                    <p>Failure reason</p>
+                </div>
+                <div class="netatmo-failure-reason-res">
+                    <p>
+                        
+                        <?php
+
+                        sensibo_failure_reason();
+
+                        ?>
+                    </p>
+                </div> 
             
             </div>
             
