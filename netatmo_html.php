@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/script.js"></script>
 </head>
 
 <!-- testing testing testing -->
@@ -32,7 +31,6 @@ include 'scripts/netatmo.php';
     <script>
         M.AutoInit()
     </script>
-    <script src="scripts/script.js"></script>
 </body>
 
 </html>

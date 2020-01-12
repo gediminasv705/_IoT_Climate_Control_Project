@@ -128,7 +128,7 @@
                 <div class="sensibo-status-res">
 
                     <p>
-                        <?php include 'scripts/code.php';
+                        <?php include 'scripts/sensibo.php';
                         echo $sensibo_status;
                         ?>
                     </p>
