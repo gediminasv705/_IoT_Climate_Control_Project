@@ -52,35 +52,44 @@ $sensibo_changed_properties =  $settings_json['result']['0']['changedProperties'
 $sensibo_measured_temp = $measurements_json['result']['0']['temperature'];
 $sensibo_measured_humidity = $measurements_json['result']['0']['humidity'];
 
+// echo 'Temp: ' . $sensibo_measured_temp . '</br></br>';
+// echo 'Hum: ' . $sensibo_measured_humidity . '</br></br>';
+// echo 'Status: ' . $sensibo_status . '</br></br>';
+// echo 'JSON settings: ';
+// print_r ($settings_json);
+// echo '</br></br>';
+// echo 'JSON measurements: ';
+// print_r ($measurements_json);
+// echo '</br></br>';
 // SENSIBO CHANGE STATES
 // API tikrinimas: https://apitester.com/
 
-// $collection_name = '/api/v2/pods/' . $device_id . '/acStates/on?apiKey=' . $api_key;
+$collection_name = '/api/v2/pods/' . $device_id . '/acStates/on?apiKey=' . $api_key;
 
-// $host = 'https://home.sensibo.com';
+$host = 'https://home.sensibo.com';
 
-// $request_url = $host . '/' . $collection_name;
-// $curl = curl_init($request_url);
+$request_url = $host . '/' . $collection_name;
+$curl = curl_init($request_url);
 
-// $data = [
-//   'newValue' => 'true'
-// ];
+$data = [
+  'newValue' => 'true'
+];
 
-// print_r($data);
+print_r($data);
 
-// curl_setopt($curl, CURLOPT_URL, $host);
-// curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
-// curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-// curl_setopt($curl, CURLOPT_HTTPHEADER, [
-//   'Content-Type: application/x-www-form-urlencoded',
-//   'Referer: localhost/_IoT_Climate_Control_Project/sensibo_html.php'
-// ]);
+curl_setopt($curl, CURLOPT_URL, $host);
+curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+  'Content-Type: application/x-www-form-urlencoded',
+  'Referer: localhost/_IoT_Climate_Control_Project/sensibo_html.php'
+]);
 
-// $response = curl_exec($curl);
-// curl_close($curl);
+$response = curl_exec($curl);
+curl_close($curl);
 
-// echo $response;
+echo $response;
 
 
 ?>
