@@ -25,6 +25,10 @@ p {
     justify-content: space-between;
 }
 
+.top-row-fixed{
+    margin-bottom: 112px;
+}
+
 @media only screen and (max-width: 600px) {
     .top-row h1{
         display: none;

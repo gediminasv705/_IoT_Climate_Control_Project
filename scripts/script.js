@@ -4,6 +4,7 @@
 $('document').ready(function () {
 
     var navbar = document.getElementById("navbar");
+    var topRow = document.getElementById("top-row");
     var navbarPosition = navbar.offsetTop;
 
     var page_1 = document.getElementById("page-1");
@@ -44,16 +45,17 @@ $('document').ready(function () {
         if (scroll > navbarPosition) {
 
             navbar.classList.add("meniu-fixed");
+            topRow.classList.add("top-row-fixed");
 
         } else {
 
             navbar.classList.remove("meniu-fixed");
+            topRow.classList.remove("top-row-fixed");
 
         }
 
         var y = 400;
         // kiek px anksčiau užregistruos puslapio pasikeitimą
-
 
         console.log(scroll);
 

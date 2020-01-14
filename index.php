@@ -29,7 +29,7 @@
 
 
 
-            <div class="container top-row">
+            <div class="container top-row" id="top-row">
 
                 <div>
                     <a href="netatmo_html.php">
@@ -365,8 +365,8 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input id="email2" type="email" class="validate">
+                        <label for="email2">Email</label>
                     </div>
                 </div>
 
