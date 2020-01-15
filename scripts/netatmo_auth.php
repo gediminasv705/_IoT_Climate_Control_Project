@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'netatmo_config.php';
 
 function netatmo_access_token($username, $password, $scope, $host)
 {
@@ -32,12 +32,12 @@ function netatmo_access_token($username, $password, $scope, $host)
 
     if ($server_access_token){
 
-        echo "</br> Authentification succeded! </br>";
+        echo "</br> Authentification succeded!" . ' Time: ' . date("H:i:s") . '</br>';
         return $server_access_token;
 
     } else {
 
-        echo "</br> Authentification failed! </br>";
+        echo "</br> Authentification failed!" . ' Time: ' . date("H:i:s") . '</br>';
 
     }
 
