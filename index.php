@@ -17,12 +17,6 @@
 
 <body>
 
-<?php
-    include ('scripts/netatmo.php');
-    include ('scripts/sensibo_info.php');
-?>
-
-
     <div id="page-1" class="page-1">
 
         <header>
@@ -166,16 +160,14 @@
                 <div class="sensibo-status-res">
 
                     <p>
-                        <?php
-                        echo $sensibo_status;
-                        ?>
+                    
                     </p>
 
                 </div>
                 <div class="sensibo-measured-temp">
                     <p> <?php
 
-                        echo ($sensibo_measured_temp . "°" . $sensibo_target_temp_unit);
+                       
 
                         ?></p>
                 </div>
@@ -183,7 +175,7 @@
                     <p>
                         <?php
 
-                        echo ($sensibo_measured_humidity . "%");
+             
 
                         ?>
                     </p>
@@ -195,7 +187,7 @@
                     <p>
                         <?php
 
-                        echo ($sensibo_mode);
+              
 
                         ?>
                     </p>
@@ -207,7 +199,7 @@
                     <p>
                         <?php
 
-                        echo ($sensibo_target_temp . " " . $sensibo_target_temp_unit);
+          
 
                         ?>
                     </p>
@@ -219,7 +211,7 @@
                     <p>
                         <?php
 
-                        echo ($sensibo_fan_level);
+               
 
                         ?>
                     </p>
@@ -232,7 +224,6 @@
 
                         <?php
 
-                        sensibo_failure_reason();
 
                         ?>
                     </p>
@@ -254,7 +245,7 @@
 
                     <p>
                         <?php
-                        echo $status;
+           
                         ?>
                     </p>
 
@@ -262,7 +253,7 @@
 
                 <div class="netatmo-measured-temp">
                     <p> <?php
-                        echo $received_measured_temp . "°C";
+           
                         ?></p>
                 </div>
                 <div class="netatmo-humidity">
@@ -276,7 +267,7 @@
                 <div class="netatmo-mode-res">
                     <p>
                         <?php
-                        echo $received_mode;
+                   
                         ?>
                     </p>
                 </div>
@@ -287,7 +278,7 @@
                     <p>
                         <?php
 
-                        echo ($received_set_temp . " C");
+                  
 
                         ?>
                     </p>
@@ -299,7 +290,7 @@
                     <p>
                         <?php
 
-                        echo $received_battery_level;
+                
 
                         ?>
                     </p>
@@ -312,7 +303,7 @@
 
                         <?php
 
-                        sensibo_failure_reason();
+               
 
                         ?>
                     </p>
