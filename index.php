@@ -402,6 +402,8 @@
         M.AutoInit()
     </script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/get.js"></script>
+    <script src="scripts/send.js"></script>
 </body>
 
 </html>
