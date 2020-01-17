@@ -41,7 +41,6 @@ function netatmo_access_token($username, $password, $scope, $host)
 
     }
 
-
 }
 
 ?>
