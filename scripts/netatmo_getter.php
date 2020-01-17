@@ -2,9 +2,9 @@
 
 // Čia noriu gauti informaciją iš get.js
 
-$entityBody = file_get_contents('php://input');
+$data = json_decode(file_get_contents('php://input'), true);
 
-echo $entityBody;
+print_r($data);
 
 //Retrieve the string, which was sent via the POST parameter "user" 
 

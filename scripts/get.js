@@ -21,10 +21,26 @@ $(document).ready(function() {
 
 //Čia noriu perduoti informaciją į netatmo_getter.php
 
-$.post(url, myJSON, function(data, status){
+// $.post(url, myJSON, function(data, status){
 
-  console.log("status: " + status);
+//   console.log("status: " + status);
 
+// });
+
+var js_obj = {plugin: 'jquery-json', version: 2.3};
+
+    var encoded = JSON.stringify( js_obj );
+
+var data= encoded;
+
+
+    $.ajax({
+  type: "POST",
+  url: url,
+  data: data,
+  success: function(data, status){
+    console.log(status);
+  }
 });
 
 
