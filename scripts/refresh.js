@@ -4,4 +4,4 @@ $("#refresh").click(function(){
 
 setInterval(function(){ 
     netatmoDataInit(); 
-}, 5000);
+}, 2000);
