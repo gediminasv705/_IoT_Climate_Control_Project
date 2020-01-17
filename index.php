@@ -140,9 +140,10 @@
 
             <div class="settings-wrapper">
 
-            Temp. set to: <input type="button" method="post" name="temp_20" value="20"></br></br>
-            Temp. set to: <input type="button" value="30"></br></br>
-            Temp. set to: <input type="button" value="22">
+            Temp. set to: <input id="temp-20" type="button" value="20"></br></br>
+            Temp. set to: <input id="temp-30" type="button" value="30"></br></br>
+            Temp. set to: <input id="temp-22" type="button" value="22"></br></br>
+            Refresh Netatmo data: <input id="refresh" type="button" value="Refresh">
 
             </div>
 
@@ -242,19 +243,11 @@
                     <p>Device connection status</p>
                 </div>
                 <div class="netatmo-status-res">
-
-                    <p>
-                        <?php
-           
-                        ?>
-                    </p>
-
+                    <p id="netatmo-status-res"></p>
                 </div>
 
                 <div class="netatmo-measured-temp">
-                    <p> <?php
-           
-                        ?></p>
+                    <p id="netatmo-measured-temp"> </p>
                 </div>
                 <div class="netatmo-humidity">
                     <p>
@@ -265,35 +258,19 @@
                     <p>Control mode</p>
                 </div>
                 <div class="netatmo-mode-res">
-                    <p>
-                        <?php
-                   
-                        ?>
-                    </p>
+                    <p id="netatmo-control-mode"></p>
                 </div>
                 <div class="netatmo-set-temp">
-                    <p>Target temperature</p>
+                    <p>Set temperature</p>
                 </div>
                 <div class="netatmo-set-temp-res">
-                    <p>
-                        <?php
-
-                  
-
-                        ?>
-                    </p>
+                    <p id="netatmo-set-temp"></p>
                 </div>
                 <div class="netatmo-battery-level">
                     <p>Battery level</p>
                 </div>
                 <div class="netatmo-battery-level-res">
-                    <p>
-                        <?php
-
-                
-
-                        ?>
-                    </p>
+                    <p id="netatmo-battery-level"></p>
                 </div>
                 <div class="netatmo-failure-reason">
                     <p>Failure reason</p>
@@ -404,6 +381,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/get.js"></script>
     <script src="scripts/send.js"></script>
+    <script src="scripts/refresh.js"></script>
 </body>
 
 </html>

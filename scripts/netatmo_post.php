@@ -1,5 +1,7 @@
 <?php
 
+include 'netatmo_auth.php';
+
 $scope = 'read_thermostat';
 $netatmo_access_token = netatmo_access_token($username, $password, $scope, $host);
 
@@ -15,24 +17,14 @@ function netatmo_post($path, $host, $netatmo_access_token)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $server_output = curl_exec($ch);
-    $server_output_decoded = json_decode($server_output, true);
-
-    // prisegu laiką prie perduodamų duomenų
-    $server_output_decoded["date"] = date("H:i:s");
-
-
-    // if (isset($server_output_decoded['error']['message']) && !empty($server_output_decoded['error']['message'])){
-
-    //     echo "</br> Failed to send/receive data from Netatmo. ERROR: " . $server_output_decoded['error']['message'] . ' Time: ' . date("H:i:s") . '</br>';
-
-    // } else {
-
-    //     echo "</br> Data received/sent!"  . ' Time: ' . date("H:i:s") . '</br>';
-    //     return $server_output_decoded;
-        
-    // }
+ 
+    return $server_output;
 
 }
+
+$path = "/api/homesdata";
+
+//echo netatmo_post($path, $host, $netatmo_access_token);
 
 ?>
 

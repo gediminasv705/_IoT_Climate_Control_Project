@@ -4,12 +4,9 @@
 include 'netatmo_config.php';
 $scope = 'read_thermostat';
 $netatmo_access_token = netatmo_access_token($username, $password, $scope, $host);
-// 
-
 
 function netatmo_access_token($username, $password, $scope, $host)
 {
-
     $url = $host . "/oauth2/token";
     $client_id = '5e1356846bd26250937415a0';
     $client_secret = 'zwCqRoMQ3GzsNqScjtE1tAuwXeDJG8aLatLkMEUTTn';
@@ -36,13 +33,14 @@ function netatmo_access_token($username, $password, $scope, $host)
     // dekodinu, kad prisegčiau datą, tada vėl užkoduoju
     // true metode reiškia, kad dekoduos į assoc array
     $server_output_decoded = json_decode($server_output, true);
-    $server_output_decoded["date"] =  date("H:i:s");
-    $server_output_encoded = json_encode($server_output_decoded);
-    // 
+    // $server_output_decoded["date"] =  date("H:i:s");
+    // $server_output_encoded = json_encode($server_output_decoded);
+
+    $access_token = $server_output_decoded['access_token'];
 
     // $server_output_message = $_POST[$server_output_encoded];
 
-    echo $server_output;
+    return $access_token;
 
 }
 
