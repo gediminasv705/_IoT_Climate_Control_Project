@@ -12,13 +12,11 @@ $path_send = $decoded_json['path'];
 $netatmo_access_token = netatmo_access_token($username, $password, $scope, $host);
 
 
-$path = $path_send . $temp;
+echo netatmo_post($path_send, $host, $netatmo_access_token);
 
-echo netatmo_post($path, $host, $netatmo_access_token);
-
-function netatmo_post($path, $host, $netatmo_access_token)
+function netatmo_post($path_send, $host, $netatmo_access_token)
 {
-    $url = $host . $path;
+    $url = $host . $path_send;
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);

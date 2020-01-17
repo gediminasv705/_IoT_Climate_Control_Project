@@ -6,7 +6,7 @@ var url = "scripts/netatmo_post.php";
 $("#temp-20").click(function(){
 
 
-    var obj = { scope: 'write_thermostat', temp: 20, path: tempPath};
+    var obj = { scope: 'write_thermostat', temp: 20, path: (tempPath + '20')};
     var myJSON = JSON.stringify(obj);
 
     $.post(url,
@@ -19,7 +19,7 @@ $("#temp-20").click(function(){
 
 $("#temp-22").click(function(){
 
-    var obj = { scope: 'write_thermostat', temp: 22, path: tempPath};
+    var obj = { scope: 'write_thermostat', temp: 22, path: (tempPath + '22')};
     var myJSON = JSON.stringify(obj);
 
     $.post(url,

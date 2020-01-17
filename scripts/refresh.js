@@ -1,7 +1,7 @@
 $("#refresh").click(function(){
-    // netatmoDataInit();
+    netatmoDataInit();
 })
 
 setInterval(function(){ 
-    // netatmoDataInit(); 
-}, 10000);
+    netatmoDataInit(); 
+}, 5000);
