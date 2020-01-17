@@ -1,10 +1,7 @@
 $("#refresh").click(function(){
-
-    console.log("manual refresh netatmo data");
-    netatmoDataInit();
+    // netatmoDataInit();
 })
 
 setInterval(function(){ 
-    console.log("auto refresh netatmo data");
-    netatmoDataInit(); 
+    // netatmoDataInit(); 
 }, 10000);

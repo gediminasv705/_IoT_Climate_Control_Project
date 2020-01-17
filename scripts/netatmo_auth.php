@@ -1,5 +1,4 @@
 <?php
-
 // laikini duomenys funkcijos įvykdymui
 include 'netatmo_config.php';
 $scope = 'read_thermostat';

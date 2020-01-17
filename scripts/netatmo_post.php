@@ -2,8 +2,19 @@
 
 include 'netatmo_auth.php';
 
-$scope = 'read_thermostat';
+$json = $_POST['myData'];
+$decoded_json = json_decode($json, true);
+$myScope = $decoded_json['scope'];
+$temp = $decoded_json['temp'];
+$scope = $decoded_json['scope'];
+$path_send = $decoded_json['path'];
+
 $netatmo_access_token = netatmo_access_token($username, $password, $scope, $host);
+
+
+$path = $path_send . $temp;
+
+echo netatmo_post($path, $host, $netatmo_access_token);
 
 function netatmo_post($path, $host, $netatmo_access_token)
 {
@@ -22,9 +33,10 @@ function netatmo_post($path, $host, $netatmo_access_token)
 
 }
 
-$path = "/api/homesdata";
 
-//echo netatmo_post($path, $host, $netatmo_access_token);
+
+
+
 
 ?>
 
