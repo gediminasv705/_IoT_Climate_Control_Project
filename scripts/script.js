@@ -3,6 +3,8 @@
 
 $('document').ready(function () {
 
+    netatmoDataInit();
+
     var navbar = document.getElementById("navbar");
     var topRow = document.getElementById("top-row");
     var navbarPosition = navbar.offsetTop;

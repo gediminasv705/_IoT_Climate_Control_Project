@@ -1,4 +1,4 @@
-function netatmoRefresh() {
+function netatmoDataInit() {
   
   $(document).ready(function() {
     var url = "scripts/netatmo_getter.php";
