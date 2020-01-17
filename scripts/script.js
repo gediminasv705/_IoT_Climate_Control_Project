@@ -11,32 +11,21 @@ $('document').ready(function () {
     var page_1_nav = document.getElementById("page-1-nav");
     var page1Position = page_1.offsetTop;
 
-    console.log(page1Position);
-
     var page_2 = document.getElementById("page-2");
     var page_2_nav = document.getElementById("page-2-nav");
     var page2Position = page_2.offsetTop;
-
-    console.log(page2Position);
 
     var page_3 = document.getElementById("page-3");
     var page_3_nav = document.getElementById("page-3-nav");
     var page3Position = page_3.offsetTop;
 
-    console.log(page3Position);
-
     var page_4 = document.getElementById("page-4");
     var page_4_nav = document.getElementById("page-4-nav");
     var page4Position = page_4.offsetTop;
 
-    console.log(page4Position);
-
     var page_5 = document.getElementById("page-5");
     var page_5_nav = document.getElementById("page-5-nav");
     var page5Position = page_5.offsetTop;
-
-    console.log(page5Position);
-
 
     window.addEventListener("scroll", function (e) {
 
@@ -56,8 +45,6 @@ $('document').ready(function () {
 
         var y = 400;
         // kiek px anksčiau užregistruos puslapio pasikeitimą
-
-        console.log(scroll);
 
         if (scroll >= page1Position && scroll < (page2Position - y)) {
 

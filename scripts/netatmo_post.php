@@ -1,5 +1,8 @@
 <?php
 
+$scope = 'read_thermostat';
+$netatmo_access_token = netatmo_access_token($username, $password, $scope, $host);
+
 function netatmo_post($path, $host, $netatmo_access_token)
 {
     $url = $host . $path;
@@ -14,20 +17,22 @@ function netatmo_post($path, $host, $netatmo_access_token)
     $server_output = curl_exec($ch);
     $server_output_decoded = json_decode($server_output, true);
 
+    // prisegu laiką prie perduodamų duomenų
     $server_output_decoded["date"] = date("H:i:s");
 
 
-    if (isset($server_output_decoded['error']['message']) && !empty($server_output_decoded['error']['message'])){
+    // if (isset($server_output_decoded['error']['message']) && !empty($server_output_decoded['error']['message'])){
 
-        echo "</br> Failed to send/receive data from Netatmo. ERROR: " . $server_output_decoded['error']['message'] . ' Time: ' . date("H:i:s") . '</br>';
+    //     echo "</br> Failed to send/receive data from Netatmo. ERROR: " . $server_output_decoded['error']['message'] . ' Time: ' . date("H:i:s") . '</br>';
 
-    } else {
+    // } else {
 
-        echo "</br> Data received/sent!"  . ' Time: ' . date("H:i:s") . '</br>';
-        return $server_output_decoded;
+    //     echo "</br> Data received/sent!"  . ' Time: ' . date("H:i:s") . '</br>';
+    //     return $server_output_decoded;
         
-    }
+    // }
 
 }
 
 ?>
+
