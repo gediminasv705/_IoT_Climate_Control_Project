@@ -1,7 +1,12 @@
+
+function refresh(){
+
 $("#refresh").click(function(){
-    netatmoDataInit();
+    netatmoConnectionInit();
 })
 
 setInterval(function(){ 
-    netatmoDataInit(); 
-}, 2000);
+    netatmoConnectionInit();
+}, 10000);
+
+}

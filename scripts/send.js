@@ -1,6 +1,6 @@
 
 
-var tempPath = "/api/setroomthermpoint?home_id=5da9b0feffda1e000b1a6c6c&room_id=3822593957&mode=manual&temp=";
+var tempPath = "/api/setroomthermpoint?home_id=5e15f1c267368a000b0667a0&room_id=3160658637&mode=manual&temp=";
 var url = "scripts/netatmo_post.php";
 
 $("#temp-20").click(function(){

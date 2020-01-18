@@ -378,10 +378,11 @@
     <script>
         M.AutoInit()
     </script>
-    <script src="scripts/script.js"></script>
     <script src="scripts/get.js"></script>
     <script src="scripts/send.js"></script>
     <script src="scripts/refresh.js"></script>
+    <script src="scripts/interface.js"></script>
+    <script src="scripts/main_script.js"></script>
 </body>
 
 </html>
