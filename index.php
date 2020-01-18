@@ -140,112 +140,154 @@
 
             <div class="settings-wrapper">
 
-                Temp. set to: <input id="temp-20" type="button" value="20"></br></br>
-                Temp. set to: <input id="temp-30" type="button" value="30"></br></br>
-                Temp. set to: <input id="temp-22" type="button" value="22"></br></br>
-                Refresh Netatmo data: <input id="refresh" type="button" value="Refresh">
+                <H5>Select climate settings</H5>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="" disabled selected>Choose your climate mode</option>
+                        <option value="1">Heating</option>
+                        <option value="2">Cooling</option>
+                        <option value="3">Auto</option>
+                    </select>
+                    <label>Climate mode</label>
+                </div>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="" disabled selected>Choose your heating devices</option>
+                        <option value="1">Boiler</option>
+                        <option value="2">Boiler + Fancoil</option>
+                    </select>
+                    <label>Heating devices</label>
+                </div>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="" disabled selected>Choose your fan speed</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">Auto</option>
+                    </select>
+                    <label>Fan speed</label>
+                </div>
+
+                <label class="temperature-label">Select comfortable temperature</label>
+                <div class="temp-select">
+                    <div class="temp-row">
+                        <a class="btn-floating btn-large waves-effect waves-light orange darken-4"><i class="material-icons">add</i></a>
+                        <div class="input-field col s2 offset-s1">
+                            <input value="21" id="temp-select" type="text" class="validate">
+                        </div>
+                        <a class="btn-floating btn-large waves-effect waves-light orange darken-4"><i class="material-icons">add</i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="100" />
+                    </p>
+
+                </div>
+
+                <div class="confirm-btn-wrapper">
+                    <div class="button-confirm">
+                        <a class="waves-effect waves-light btn-large button-confirm orange darken-4">Confirm<i class="material-icons right">build</i></a>
+                    </div> 
+                </div>
+
 
             </div>
 
             <div class="sensibo-wrapper">
 
-                <div class="sensibo-logo">
+                <div class="sensibo-logo grid-center">
                     <h5>Sensibo LOGO</h5>
                 </div>
-                <div class="sensibo-indication">
+                <div class="sensibo-indication grid-center">
                     <i class="small material-icons green-text">power_settings_new</i>
                 </div>
-                <div class="sensibo-status">
+                <div class="sensibo-status grid-vertical-center">
                     <p>Device connection status:</p>
                 </div>
-                <div class="sensibo-status-res">
+                <div class="sensibo-status-res  grid-center">
                     <p id="sensibo-status"></p>
                 </div>
-                <div class="sensibo-measured-temp">
+                <div class="sensibo-measured-temp grid-vertical-center">
                     <p id="sensibo-measured-temp"></p>
                 </div>
-                <div class="sensibo-humidity">
-                <p id="sensibo-humidity"></p>
+                <div class="sensibo-humidity grid-vertical-center">
+                    <p id="sensibo-humidity"></p>
                 </div>
-                <div class="sensibo-mode">
+                <div class="sensibo-mode grid-vertical-center">
                     <p>Sensibo mode</p>
                 </div>
-                <div class="sensibo-mode-res">
+                <div class="sensibo-mode-res  grid-center">
                     <p id="sensibo-mode"></p>
                 </div>
-                <div class="sensibo-set-temp">
+                <div class="sensibo-set-temp grid-vertical-center">
                     <p>Target temperature</p>
                 </div>
-                <div class="sensibo-set-temp-res">
+                <div class="sensibo-set-temp-res  grid-center">
                     <p id="sensibo-set-temp"></p>
                 </div>
-                <div class="sensibo-fan-level">
+                <div class="sensibo-fan-level grid-vertical-center">
                     <p>Sensibo fan level</p>
                 </div>
-                <div class="sensibo-fan-level-res">
+                <div class="sensibo-fan-level-res  grid-center">
                     <p id="sensibo-fan-level"></p>
                 </div>
-                <div class="sensibo-failure-reason">
+                <div class="sensibo-failure-reason grid-vertical-center">
                     <p>Device status</p>
                 </div>
-                <div class="sensibo-failure-reason-res">
+                <div class="sensibo-failure-reason-res grid-center">
                     <p id="sensibo-device-status"></p>
                 </div>
 
             </div>
             <div class="netatmo-wrapper">
 
-                <div class="netatmo-logo">
+                <div class="netatmo-logo grid-center">
                     <h5>Netatmo LOGO</h5>
                 </div>
-                <div class="netatmo-indication">
+                <div class="netatmo-indication grid-center">
                     <i class="small material-icons green-text">power_settings_new</i>
                 </div>
-                <div class="netatmo-status">
+                <div class="netatmo-status grid-vertical-center">
                     <p>Device connection status</p>
                 </div>
-                <div class="netatmo-status-res">
+                <div class="netatmo-status-res grid-center">
                     <p id="netatmo-status-res"></p>
                 </div>
 
-                <div class="netatmo-measured-temp">
+                <div class="netatmo-measured-temp grid-vertical-center">
                     <p id="netatmo-measured-temp"> </p>
                 </div>
-                <div class="netatmo-humidity">
+                <div class="netatmo-humidity grid-vertical-center">
                     <p>
 
                     </p>
                 </div>
-                <div class="netatmo-mode">
+                <div class="netatmo-mode grid-vertical-center">
                     <p>Control mode</p>
                 </div>
-                <div class="netatmo-mode-res">
+                <div class="netatmo-mode-res grid-center">
                     <p id="netatmo-control-mode"></p>
                 </div>
-                <div class="netatmo-set-temp">
-                    <p>Set temperature</p>
+                <div class="netatmo-set-temp grid-vertical-center">
+                    <p>Target temperature</p>
                 </div>
-                <div class="netatmo-set-temp-res">
+                <div class="netatmo-set-temp-res grid-center">
                     <p id="netatmo-set-temp"></p>
                 </div>
-                <div class="netatmo-battery-level">
+                <div class="netatmo-battery-level grid-vertical-center">
                     <p>Battery level</p>
                 </div>
-                <div class="netatmo-battery-level-res">
+                <div class="netatmo-battery-level-res grid-center">
                     <p id="netatmo-battery-level"></p>
                 </div>
-                <div class="netatmo-failure-reason">
-                    <p>Failure reason</p>
+                <div class="netatmo-failure-reason grid-vertical-center">
+                    <p>Output status</p>
                 </div>
-                <div class="netatmo-failure-reason-res">
-                    <p>
-
-                        <?php
-
-
-
-                        ?>
-                    </p>
+                <div class="netatmo-failure-reason-res grid-center">
+                    <p id="netatmo-output-status"></p>
                 </div>
 
             </div>
@@ -341,8 +383,8 @@
         M.AutoInit()
     </script>
     <script src="scripts/netatmo_get.js"></script>
-    <script src="scripts/netatmo_send.js"></script>
-    <script src="scripts/netatmo_refresh.js"></script>
+    <script src="scripts/send.js"></script>
+    <script src="scripts/refresh.js"></script>
 
     <script src="scripts/sensibo_get.js"></script>
 

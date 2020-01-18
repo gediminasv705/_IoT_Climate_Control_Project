@@ -1,4 +1,7 @@
 function sensiboGetInit() {
+
+  console.log('sensibo data refreshed');
+
   sensiboMeasurements();
   sensiboAcStates();
 
@@ -36,7 +39,9 @@ function sensiboGetInit() {
       var sensiboOn = roomPath.acState.on;
       var sensiboMode = roomPath.acState.mode;
       var sensiboFanLevel = roomPath.acState.fanLevel;
-      var sensiboChangedProperties = roomPath.changedProperties;
+
+      // Fiksuoja pakeistus parametrus:
+      // var sensiboChangedProperties = roomPath.changedProperties;
 
       if (sensiboStatus == "Success") {
         document.getElementById("sensibo-status").innerHTML = "Connected";
@@ -49,10 +54,10 @@ function sensiboGetInit() {
 
         if (sensiboOn) {
           document.getElementById("sensibo-device-status").innerHTML =
-            "Turned On";
+            "Device is On";
         } else {
           document.getElementById("sensibo-device-status").innerHTML =
-            "Turned Off";
+            "Device is Off";
         }
       } else {
         console.log("Nepavyko prisijungti");

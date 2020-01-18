@@ -161,7 +161,7 @@ top: 50px;
     min-height: 980px;
     background-color: rgb(156, 150, 248);
     display: flex;
-    align-items: center;
+    align-items: stretch;
 }
 
 .settings-grid {
@@ -186,6 +186,7 @@ top: 50px;
     grid-template-columns: 1fr;
     grid-template-areas:
         "settings"
+        "settings"
         "sensibo"
         "netatmo";
         } 
@@ -200,6 +201,7 @@ top: 50px;
     grid-template-columns: 1fr;
     grid-template-areas:
         "settings"
+        "settings"
         "sensibo"
         "netatmo";
         } 
@@ -208,9 +210,54 @@ top: 50px;
 .settings-wrapper {
     grid-area: settings;
     background-color:whitesmoke;
-    border-radius: 10px;
-    border: 2px solid orange;
-    padding: 50px;
+    padding: 10px 50px 30px 50px;
+    display: flex;
+    flex-flow: column;
+}
+
+.settings-wrapper h5{
+    margin-top: 0px;
+    padding-bottom: 20px;
+}
+
+p.range-field{
+
+    margin-top: 20px;
+    padding: 0px;
+}
+
+#temp-select{
+
+    width: 20px;
+}
+
+.temp-select {
+    display: flex;
+    justify-content: center;
+}
+
+.temperature-label {
+
+    padding: 10px;
+}
+
+.temp-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+
+}
+
+.confirm-btn-wrapper{
+    height:100%;
+    display: flex;
+    align-items: flex-end;
+    align-content: stretch;
+    width: 100%;
+}
+.button-confirm{
+    min-width: 100%;
 }
 
 .sensibo-wrapper {
@@ -219,8 +266,6 @@ top: 50px;
     padding: 10px;
     grid-area: sensibo;
     background-color:whitesmoke;
-    border-radius: 10px;
-    border: 2px solid orange;
     max-height: 100%;
     display: grid;
     grid-template-columns: 30% 30% 15% 25%;
@@ -238,6 +283,17 @@ top: 50px;
 }
 
 
+.grid-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-vertical-center{
+    display: flex;
+    align-items: center;
+}
+
 .sensibo-wrapper p{
     margin: 0;
     padding: 0;
@@ -249,33 +305,28 @@ top: 50px;
 .sensibo-logo {
     grid-area: sensibo-logo;
     background-color:rgb(211, 223, 159);
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .sensibo-logo h5 {
     margin: 0;
     padding: 0;
+    font-weight: bold;
 }
 .sensibo-indication {
     grid-area: sensibo-indication;
     background-color:rgb(211, 223, 159);
-    display:flex;
-    align-items: center;
-    justify-content: center;
+
 }
 .sensibo-status {
     grid-area: sensibo-status;
     background-color:rgb(211, 223, 159);
+    
 }
 
 .sensibo-status-res {
     grid-area: sensibo-status-res;
     background-color:rgb(211, 223, 159);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 
 }
 .sensibo-measured-temp {
@@ -336,16 +387,12 @@ top: 50px;
 }
 
 
-
-
 .netatmo-wrapper {
 
     box-sizing: border-box;
     padding: 10px;
     grid-area: netatmo;
     background-color:whitesmoke;
-    border-radius: 10px;
-    border: 2px solid orange;
     max-height: 100%;
     display: grid;
     grid-template-columns: 30% 30% 15% 25%;
@@ -374,21 +421,16 @@ top: 50px;
 .netatmo-logo {
     grid-area: netatmo-logo;
     background-color:rgb(243, 229, 152);
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .netatmo-logo h5 {
     margin: 0;
     padding: 0;
+    font-weight: bold;
 }
 .netatmo-indication {
     grid-area: netatmo-indication;
     background-color:rgb(243, 229, 152);
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 .netatmo-status {
     grid-area: netatmo-status;
@@ -398,9 +440,6 @@ top: 50px;
 .netatmo-status-res {
     grid-area: netatmo-status-res;
     background-color:rgb(243, 229, 152);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 }
 .netatmo-measured-temp {
@@ -424,9 +463,6 @@ top: 50px;
 .netatmo-mode-res {
     grid-area: netatmo-mode-res;
     background-color:rgb(243, 229, 152);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .netatmo-set-temp {
     grid-area: netatmo-set-temp;
@@ -435,9 +471,6 @@ top: 50px;
 .netatmo-set-temp-res {
     grid-area: netatmo-set-temp-res;
     background-color:rgb(243, 229, 152);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .netatmo-battery-level {
     grid-area: netatmo-battery-level;
@@ -446,9 +479,6 @@ top: 50px;
 .netatmo-battery-level-res {
     grid-area: netatmo-battery-level-res;
     background-color:rgb(243, 229, 152);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .netatmo-failure-reason {

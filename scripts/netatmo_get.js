@@ -1,7 +1,9 @@
 function netatmoGetInit() {
   
-  // netatmoInfo();
-  // netatmoMeasurements();
+  console.log('netatmo data refreshed');
+
+  netatmoInfo();
+  //netatmoMeasurements();
 
   function netatmoInfo() {
     var url = "scripts/netatmo_getter.php";
@@ -17,18 +19,28 @@ function netatmoGetInit() {
 
       var decodedData = JSON.parse(data);
       var roomPath = decodedData.body.home.rooms["0"];
-
+      
       var netatmoStatus = decodedData.status;
       var netatmoMeasuredTemp = roomPath.therm_measured_temperature;
       var netatmoSetpointTemp = roomPath.therm_setpoint_temperature;
       var netatmoSetpointMode = roomPath.therm_setpoint_mode;
+      var netatmoBatteryLevel = decodedData.body.home.modules['1'].battery_state;
+      var netatmoOutputState = decodedData.body.home.modules['1'].boiler_status;
 
       if (netatmoStatus == 'ok') {
         
+        console.log("Status: " + netatmoStatus);
         document.getElementById("netatmo-status-res").innerHTML = "Connected";
         document.getElementById("netatmo-measured-temp").innerHTML = netatmoMeasuredTemp + "°C";
         document.getElementById("netatmo-set-temp").innerHTML = netatmoSetpointTemp + "°C";
         document.getElementById("netatmo-control-mode").innerHTML = netatmoSetpointMode;
+        document.getElementById("netatmo-battery-level").innerHTML = netatmoBatteryLevel;
+
+        if (netatmoOutputState){
+          document.getElementById("netatmo-output-status").innerHTML = "Output is On";
+        } else {
+          document.getElementById("netatmo-output-status").innerHTML = "Output is Off";
+        }
 
       } else {
         document.getElementById("netatmo-status-res").innerHTML = "Not connected";
