@@ -17,16 +17,14 @@ $path = "/api/homesdata";
 $netatmo_data_received = netatmo_post($path, $host, $netatmo_access_token);
 $netatmo_data_decoded = json_decode($netatmo_data_received, true);
 
-print_r($netatmo_data_decoded) ;
+$home_id = $netatmo_data_decoded['body']['homes']['0']['id'];
+$room_id = $netatmo_data_decoded['body']['homes']['0']['rooms']['0']['id'];
 
-// $home_id = $netatmo_data_decoded['body']['homes']['0']['id'];
-// $room_id = $netatmo_data_decoded['body']['homes']['0']['rooms']['0']['id'];
+$path = $path_send . '?home_id=' . $home_id;
 
-// $path = $path_send . '?home_id=' . $home_id;
+$netatmo_data_received = netatmo_post($path, $host, $netatmo_access_token);
 
-// $netatmo_data_received = netatmo_post($path, $host, $netatmo_access_token);
-
-// echo $netatmo_data_received;
+echo $netatmo_data_received;
 
 } else {
 

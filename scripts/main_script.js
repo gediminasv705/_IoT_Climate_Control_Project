@@ -1,9 +1,11 @@
 
 $('document').ready(function () {
 
-    netatmoConnectionInit();
-    // refresh();
-    navbarScroll();
+    netatmoGetInit();
+    // netatmoRefresh(); //negaliu per dažnai kreiptis į serverį dėl application limits https://dev.netatmo.com/guideline/
+    sensiboGetInit();
+
+    // navbarScroll();
 
 
 

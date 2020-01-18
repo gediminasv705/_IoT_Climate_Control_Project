@@ -56,7 +56,6 @@ function navbarScroll() {
     }
 
     if (scroll >= page4Position - y && scroll < page5Position - y) {
-      console.log("page4");
 
       page_4_nav.classList.add("nav-item-filter");
     } else {

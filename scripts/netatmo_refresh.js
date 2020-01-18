@@ -1,5 +1,5 @@
 
-function refresh(){
+function netatmoRefresh(){
 
 $("#refresh").click(function(){
     netatmoConnectionInit();
@@ -7,6 +7,6 @@ $("#refresh").click(function(){
 
 setInterval(function(){ 
     netatmoConnectionInit();
-}, 10000);
+}, 4000);
 
 }

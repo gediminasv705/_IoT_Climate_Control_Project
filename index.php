@@ -89,39 +89,39 @@
                 </nav>
 
                 <div class="login">
-                <form method="post" action="">
-                    <h5>Sensibo Login</h5>
+                    <form method="post" action="">
+                        <h5>Sensibo Login</h5>
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="sensibo" type="text" name="sensibo" class="validate">
-                            <label for="sensibo" class="orange-text text-darken-4">Sensibo API key</label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="sensibo" type="text" name="sensibo" class="validate">
+                                <label for="sensibo" class="orange-text text-darken-4">Sensibo API key</label>
+                            </div>
+
                         </div>
+                        <button class="btn waves-effect orange darken-4" type="submit" name="action">Sensibo login
+                            <i class="material-icons right">lock_open</i>
+                        </button>
+                    </form>
+                    <form method="post" action="">
+                        <h5>Netatmo Login</h5>
 
-                    </div>
-                    <button class="btn waves-effect orange darken-4" type="submit" name="action">Sensibo login
-                        <i class="material-icons right">lock_open</i>
-                    </button>
-                </form>
-                <form method="post" action="">
-                    <h5>Netatmo Login</h5>
+                        <div class="row">
 
-                    <div class="row">
+                            <div class="input-field col s6">
+                                <input id="email" name="email" type="email" class="validate">
+                                <label for="email" class="orange-text text-darken-4">Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="password" name="password" type="password" class="validate">
+                                <label for="password" class="orange-text text-darken-4">Password</label>
+                            </div>
 
-                        <div class="input-field col s6">
-                            <input id="email" name="email" type="email" class="validate">
-                            <label for="email" class="orange-text text-darken-4">Email</label>
                         </div>
-                        <div class="input-field col s6">
-                            <input id="password" name="password" type="password" class="validate">
-                            <label for="password" class="orange-text text-darken-4">Password</label>
-                        </div>
-
-                    </div>
-                    <button class="btn waves-effect orange darken-4" type="submit" name="action">netatmo login
-                        <i class="material-icons right">lock_open</i>
-                    </button>
-                </form>
+                        <button class="btn waves-effect orange darken-4" type="submit" name="action">netatmo login
+                            <i class="material-icons right">lock_open</i>
+                        </button>
+                    </form>
 
                 </div>
             </div>
@@ -140,10 +140,10 @@
 
             <div class="settings-wrapper">
 
-            Temp. set to: <input id="temp-20" type="button" value="20"></br></br>
-            Temp. set to: <input id="temp-30" type="button" value="30"></br></br>
-            Temp. set to: <input id="temp-22" type="button" value="22"></br></br>
-            Refresh Netatmo data: <input id="refresh" type="button" value="Refresh">
+                Temp. set to: <input id="temp-20" type="button" value="20"></br></br>
+                Temp. set to: <input id="temp-30" type="button" value="30"></br></br>
+                Temp. set to: <input id="temp-22" type="button" value="22"></br></br>
+                Refresh Netatmo data: <input id="refresh" type="button" value="Refresh">
 
             </div>
 
@@ -156,78 +156,40 @@
                     <i class="small material-icons green-text">power_settings_new</i>
                 </div>
                 <div class="sensibo-status">
-                    <p>Device connection status</p>
+                    <p>Device connection status:</p>
                 </div>
                 <div class="sensibo-status-res">
-
-                    <p>
-                    
-                    </p>
-
+                    <p id="sensibo-status"></p>
                 </div>
                 <div class="sensibo-measured-temp">
-                    <p> <?php
-
-                       
-
-                        ?></p>
+                    <p id="sensibo-measured-temp"></p>
                 </div>
                 <div class="sensibo-humidity">
-                    <p>
-                        <?php
-
-             
-
-                        ?>
-                    </p>
+                <p id="sensibo-humidity"></p>
                 </div>
                 <div class="sensibo-mode">
                     <p>Sensibo mode</p>
                 </div>
                 <div class="sensibo-mode-res">
-                    <p>
-                        <?php
-
-              
-
-                        ?>
-                    </p>
+                    <p id="sensibo-mode"></p>
                 </div>
                 <div class="sensibo-set-temp">
                     <p>Target temperature</p>
                 </div>
                 <div class="sensibo-set-temp-res">
-                    <p>
-                        <?php
-
-          
-
-                        ?>
-                    </p>
+                    <p id="sensibo-set-temp"></p>
                 </div>
                 <div class="sensibo-fan-level">
                     <p>Sensibo fan level</p>
                 </div>
                 <div class="sensibo-fan-level-res">
-                    <p>
-                        <?php
-
-               
-
-                        ?>
-                    </p>
+                    <p id="sensibo-fan-level"></p>
                 </div>
                 <div class="sensibo-failure-reason">
-                    <p>Failure reason</p>
+                    <p>Device status</p>
                 </div>
                 <div class="sensibo-failure-reason-res">
-                    <p>
-
-                        <?php
-
-
-                        ?>
-                    </p>
+                    <p id="sensibo-device-status"></p>
                 </div>
 
             </div>
@@ -280,7 +242,7 @@
 
                         <?php
 
-               
+
 
                         ?>
                     </p>
@@ -378,9 +340,12 @@
     <script>
         M.AutoInit()
     </script>
-    <script src="scripts/get.js"></script>
-    <script src="scripts/send.js"></script>
-    <script src="scripts/refresh.js"></script>
+    <script src="scripts/netatmo_get.js"></script>
+    <script src="scripts/netatmo_send.js"></script>
+    <script src="scripts/netatmo_refresh.js"></script>
+
+    <script src="scripts/sensibo_get.js"></script>
+
     <script src="scripts/interface.js"></script>
     <script src="scripts/main_script.js"></script>
 </body>
