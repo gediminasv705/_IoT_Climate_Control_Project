@@ -63,22 +63,10 @@ function sensiboGetData() {
       if (status == "success"){
         document.getElementById("answer-sensibo").classList.add("green-text");
         document.getElementById("answer-sensibo").innerHTML = "<p>Sensibo nustatymai sėkmingai gauti</p>";
-      } else {
-        document.getElementById("answer-sensibo").classList.add("red-text");
-        document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
-      }
-
-      // Fiksuoja pakeistus parametrus:
-      // var sensiboChangedProperties = roomPath.changedProperties;
-
-      if (sensiboStatus == "Success") {
         document.getElementById("sensibo-status").innerHTML = "Connected";
-        document.getElementById("sensibo-set-temp").innerHTML =
-          sensiboTargetTemp + "°" + sensiboTempUnit;
+        document.getElementById("sensibo-set-temp").innerHTML = sensiboTargetTemp + "°" + sensiboTempUnit;
         document.getElementById("sensibo-mode").innerHTML = sensiboMode;
-        document.getElementById(
-          "sensibo-fan-level"
-        ).innerHTML = sensiboFanLevel;
+        document.getElementById("sensibo-fan-level").innerHTML = sensiboFanLevel;
 
         if (sensiboOn) {
           document.getElementById("sensibo-device-status").innerHTML =
@@ -88,8 +76,10 @@ function sensiboGetData() {
             "Device is Off";
         }
       } else {
-        console.log("Nepavyko prisijungti");
+        document.getElementById("answer-sensibo").classList.add("red-text");
+        document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
       }
+      
     });
   }
 }

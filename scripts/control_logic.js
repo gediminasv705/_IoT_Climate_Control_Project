@@ -19,6 +19,7 @@ function controlLogic() {
       btnTempUp.classList.remove("disabled");
       btnTempDown.classList.remove("disabled");
       confirm.classList.remove("disabled");
+      // stabdau automaticControl intervalą
       clearInterval(interval);
     }
 

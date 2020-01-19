@@ -1,9 +1,7 @@
 function automaticControl() {
 
-
-
-
   interval = setInterval(function() {
+
     refresh();
 
     var netatmoSetTemp = netatmoSetpointTemp;
@@ -19,8 +17,12 @@ function automaticControl() {
     var sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
 
     function sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel) {
+
+        // sensibo priima tik int values
+        var sendTemp = Math.floor( setTemp );
+
       var settings = {
-        setTemp: setTemp,
+        setTemp: sendTemp,
         sensiboOn: sensiboOn,
         sensiboMode: sensiboMode,
         sensiboFanLevel: sensiboFanLevel
@@ -29,14 +31,18 @@ function automaticControl() {
       return settings;
     }
 
+
     if (netatmoSetTemp < netatmoGetTemp - deadBand) {
       sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
       sensiboSend(sendData);
+
     } else if (netatmoSetTemp > netatmoGetTemp + deadBand) {
-      console.log("gediminas");
+
+    //sensiboOn = "false";
+    sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
+    console.log(sendData);
 
       sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
-      console.log(sendData);
       sensiboSend(sendData);
     }
 
