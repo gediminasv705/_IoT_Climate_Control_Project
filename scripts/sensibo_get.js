@@ -1,15 +1,6 @@
 function sensiboGetData() {
-  var time = new Date();
-  var mytime =
-    " [ " +
-    time.getHours() +
-    ":" +
-    time.getMinutes() +
-    ":" +
-    time.getSeconds() +
-    " ] ";
 
-  console.log(mytime + "Sensibo duomenys atnaujinami");
+  logFormatter("  Sensibo duomenys atnaujinami  ");
 
   sensiboMeasurements();
   sensiboAcStates();
@@ -20,7 +11,10 @@ function sensiboGetData() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
-      console.log(mytime + "Sensibo gauti nustatymai: " + data);
+
+      logFormatter("  Sensibo gauti matavimai:   ");
+      console.log(data);
+
       var decodedData = JSON.parse(data);
 
       var sensiboStatus = decodedData.status;
@@ -42,7 +36,10 @@ function sensiboGetData() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
-      console.log(mytime + "Sensibo gauti matavimai: " + data);
+
+      logFormatter("  Sensibo gauti nustatymai:   ");
+      console.log(data);
+
       var decodedData = JSON.parse(data);
       var roomPath = decodedData.result["0"];
 
@@ -52,6 +49,15 @@ function sensiboGetData() {
       var sensiboOn = roomPath.acState.on;
       var sensiboMode = roomPath.acState.mode;
       var sensiboFanLevel = roomPath.acState.fanLevel;
+      var status = decodedData.status;
+
+      if (status == "success"){
+        document.getElementById("answer-sensibo").classList.add("green-text");
+        document.getElementById("answer-sensibo").innerHTML = "<p>Sensibo nustatymai sėkmingai gauti</p>";
+      } else {
+        document.getElementById("answer-sensibo").classList.add("red-text");
+        document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
+      }
 
       // Fiksuoja pakeistus parametrus:
       // var sensiboChangedProperties = roomPath.changedProperties;

@@ -1,172 +1,158 @@
 * {
-	box-sizing: border-box;
-	font-family: sans-serif;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 
 body {
-	margin: 0;
+  margin: 0;
 }
 
 p {
-    padding: 10px;
-
+  padding: 10px;
 }
 
 /* test */
 
-.top-row-wrapper{
-    display:flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-
+.top-row-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
-.top-row{
-    height: 300px;
-    display: flex;  
-
+.top-row {
+  height: 300px;
+  display: flex;
 }
 
-.top-left-wrapper{
-    display:flex;
-    align-items: center;
+.top-left-wrapper {
+  display: flex;
+  align-items: center;
 }
 
-.top-left-wrapper h4{
-    margin-bottom: 10px;
+.top-left-wrapper h4 {
+  margin-bottom: 10px;
 }
-.top-left-wrapper h1{
-    margin-top: 20px;
+.top-left-wrapper h1 {
+  margin-top: 20px;
 }
 
-
-
-.top-row-fixed{
-    margin-bottom: 112px;
+.top-row-fixed {
+  margin-bottom: 112px;
 }
 
 @media only screen and (max-width: 600px) {
-    .top-row h1{
-        display: none;
-    }
-    .top-row h3{
-        display: none;
-    }
-    .top-row h4{
-        display: none;
-    }
+  .top-row h1 {
+    display: none;
+  }
+  .top-row h3 {
+    display: none;
+  }
+  .top-row h4 {
+    display: none;
+  }
 }
 
-
-.user-settings{
-    height: 70%;
-    width: 150px;
-    background-color: rgba(255, 255, 255, 0.7);
-    right: 0px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+.user-settings {
+  height: 70%;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.7);
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
 
 @media only screen and (max-width: 600px) {
-
-.user-settings{
+  .user-settings {
     height: 90%;
     width: 80%;
     display: block;
     font-size: 20px;
-    }
+  }
 }
 
-.user-settings a{
-    padding-left: 5px;
+.user-settings a {
+  padding-left: 5px;
 }
 
-.user-picture{
-    margin: 10px;
-    display: flex;
-    justify-content: center;
+.user-picture {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .login {
-    background-color: rgba(255, 255, 255, 0.7);
-    z-index: 50;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 50;
 }
 
 .meniu {
-    margin: 0px;
-    position: relative;
+  margin: 0px;
+  position: relative;
 }
 
-.meniu a{
-    font-size: large;
+.meniu a {
+  font-size: large;
 }
-
 
 .meniu-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 998;
+  /* Keičiu z indeksą, nes pasislepia po div apačia */
+}
+
+#navbar {
+  z-index: 999;
+}
+
+@media only screen and (max-width: 600px) {
+  #navbar {
     position: fixed;
     top: 0;
-    z-index: 10;
-    /* Keičiu z indeksą, nes pasislepia po div apačia */
+  }
 }
 
 @media only screen and (max-width: 600px) {
-
- #navbar {
-        position: fixed;
-        top: 0;
-        z-index: 10;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-#navbar-logo {
+  #navbar-logo {
     display: none;
-}
+  }
 }
 
 .search-bar {
-
-position: relative;
-top: 50px;
-
+  position: relative;
+  top: 50px;
 }
 
 .nav-item-filter {
-    background-color: rgba(205, 207, 67, 0.4);
+  background-color: rgba(205, 207, 67, 0.4);
 }
 
 /* PAGE 1 */
 
-.page-1{
-
-    width:100%;
-    min-height: 980px;  
+.page-1 {
+  width: 100%;
+  min-height: 980px;
 }
 
 .page-1 div .collection {
-    border: 0px;
+  border: 0px;
 }
 
 .search-wrapper {
-
-    margin: 50px 0 50px 0;
+  margin: 50px 0 50px 0;
 }
 
 .info-summary {
-    
-    opacity: 0.5;
-    border-radius: 10px;
-    border: 2px solid orange;
-    font-size: xx-large;
-    position: relative;
+  opacity: 0.5;
+  border-radius: 10px;
+  border: 2px solid orange;
+  font-size: xx-large;
+  position: relative;
 }
 
 /* PAGE 1 */
@@ -174,443 +160,419 @@ top: 50px;
 /* PAGE 2 */
 
 .page-2 {
-    padding-top: 64px; 
-    min-height: 980px;
-    background-color: rgb(156, 150, 248);
-    display: flex;
-    align-items: stretch;
+  padding-top: 64px;
+  min-height: 980px;
+  background-color: rgb(156, 150, 248);
+  display: flex;
+  align-items: stretch;
 }
 
 .settings-grid {
-    
-    display: grid;
-    padding: 50px 0 50px 0;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-      "settings sensibo"
-      "settings netatmo";
-    align-content: stretch;
-    }
+  display: grid;
+  padding: 50px 0 50px 0;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "settings sensibo"
+    "settings netatmo";
+  align-content: stretch;
+}
 
 @media only screen and (max-width: 1000px) {
-    .settings-grid {
-                
+  .settings-grid {
     display: grid;
     padding: 50px 0 50px 0;
     grid-gap: 100px;
     grid-template-columns: 1fr;
     grid-template-areas:
-        "settings"
-        "settings"
-        "sensibo"
-        "netatmo";
-        } 
-    }
+      "settings"
+      "settings"
+      "sensibo"
+      "netatmo";
+  }
+}
 
 @media only screen and (max-width: 600px) {
-    .settings-grid {
-            
+  .settings-grid {
     display: grid;
     padding: 50px 0 50px 0;
     grid-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-areas:
-        "settings"
-        "settings"
-        "sensibo"
-        "netatmo";
-        } 
-    }
+      "settings"
+      "settings"
+      "sensibo"
+      "netatmo";
+  }
+}
 
 .settings-wrapper {
-    grid-area: settings;
-    background-color:whitesmoke;
-    padding: 15px 50px 30px 50px;
-    display: flex;
-    flex-flow: column;
+  grid-area: settings;
+  background-color: whitesmoke;
+  padding: 15px 50px 30px 50px;
+  display: flex;
+  flex-flow: column;
 }
 
-.settings-wrapper h5{
-    margin-top: 0px;
-    padding-bottom: 20px;
-    font-weight: bold;
+.settings-wrapper h5 {
+  margin-top: 0px;
+  padding-bottom: 20px;
+  font-weight: bold;
 }
 
-p.range-field{
-
-    margin-top: 20px;
-    padding: 0px;
+p.range-field {
+  margin-top: 20px;
+  padding: 0px;
 }
 
-#temp-select{
-
-    width: 25px;
-    font-size: 20px;
-    font-weight: bold;
+#temp-select {
+  width: 25px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .temp-select {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .temperature-label {
-
-    padding: 10px;
+  padding: 10px;
 }
 
-.temp-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 50%;
-
+.temp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
 }
 
-.button-confirm{
-    min-width: 100%;
-    margin: 10PX 0 10PX 0;
+.button-confirm {
+  min-width: 100%;
+  margin: 10px 0 10px 0;
 }
 
-.answer{
+.answer {
+  margin: 20px 0 0 0;
+  height: 100px;
+  background-color: white;
+  border: orangered;
+  border-style: solid;
+  border-width: 2px;
+}
 
-    margin: 20px 0 0 0;
-    height: 100px;
-    background-color: white;
-    border: orange;
+.answer p {
+  margin: 0px;
+  padding: 5px;
 }
 .sensibo-wrapper {
-
-    box-sizing: border-box;
-    padding: 10px;
-    grid-area: sensibo;
-    background-color:whitesmoke;
-    max-height: 100%;
-    display: grid;
-    grid-template-columns: 30% 30% 15% 25%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-      "sensibo-logo sensibo-logo sensibo-logo sensibo-indication"
-      "sensibo-status sensibo-status . sensibo-status-res"
-      "sensibo-measured-temp sensibo-measured-temp . ."
-      "sensibo-measured-temp sensibo-measured-temp . ."
-      "sensibo-humidity . . ."
-      "sensibo-mode sensibo-mode . sensibo-mode-res"
-      "sensibo-set-temp sensibo-set-temp . sensibo-set-temp-res"
-      "sensibo-fan-level sensibo-fan-level . sensibo-fan-level-res"
-      "sensibo-failure-reason . sensibo-failure-reason-res sensibo-failure-reason-res";
+  box-sizing: border-box;
+  padding: 10px;
+  grid-area: sensibo;
+  background-color: whitesmoke;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 30% 30% 15% 25%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "sensibo-logo sensibo-logo sensibo-logo sensibo-indication"
+    "sensibo-status sensibo-status . sensibo-status-res"
+    "sensibo-measured-temp sensibo-measured-temp . ."
+    "sensibo-measured-temp sensibo-measured-temp . ."
+    "sensibo-humidity . . ."
+    "sensibo-mode sensibo-mode . sensibo-mode-res"
+    "sensibo-set-temp sensibo-set-temp . sensibo-set-temp-res"
+    "sensibo-fan-level sensibo-fan-level . sensibo-fan-level-res"
+    "sensibo-failure-reason . sensibo-failure-reason-res sensibo-failure-reason-res";
 }
 
-
-.grid-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.grid-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.grid-vertical-center{
-    display: flex;
-    align-items: center;
+.grid-vertical-center {
+  display: flex;
+  align-items: center;
 }
 
-.sensibo-wrapper p{
-    margin: 0;
-    padding: 0;
-    padding-left: 5px;
-    font-size: 20px;
-
+.sensibo-wrapper p {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  font-size: 20px;
 }
 
 .sensibo-logo {
-    grid-area: sensibo-logo;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-logo;
+  background-color: rgb(211, 223, 159);
 }
 
 .sensibo-logo h5 {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
 }
 .sensibo-indication {
-    grid-area: sensibo-indication;
-    background-color:rgb(211, 223, 159);
-
+  grid-area: sensibo-indication;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-status {
-    grid-area: sensibo-status;
-    background-color:rgb(211, 223, 159);
-    
+  grid-area: sensibo-status;
+  background-color: rgb(211, 223, 159);
 }
 
 .sensibo-status-res {
-    grid-area: sensibo-status-res;
-    background-color:rgb(211, 223, 159);
-
-
+  grid-area: sensibo-status-res;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-measured-temp {
-    grid-area: sensibo-measured-temp;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-measured-temp;
+  background-color: rgb(211, 223, 159);
 }
 
-.sensibo-measured-temp p{
-
-    font-size: 50px;
-    margin: 0;
+.sensibo-measured-temp p {
+  font-size: 50px;
+  margin: 0;
 }
 .sensibo-humidity {
-    grid-area: sensibo-humidity;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-humidity;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-mode {
-    grid-area: sensibo-mode;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-mode;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-mode-res {
-    grid-area: sensibo-mode-res;
-    background-color:rgb(211, 223, 159);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-area: sensibo-mode-res;
+  background-color: rgb(211, 223, 159);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sensibo-set-temp {
-    grid-area: sensibo-set-temp;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-set-temp;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-set-temp-res {
-    grid-area: sensibo-set-temp-res;
-    background-color:rgb(211, 223, 159);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-area: sensibo-set-temp-res;
+  background-color: rgb(211, 223, 159);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sensibo-fan-level {
-    grid-area: sensibo-fan-level;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-fan-level;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-fan-level-res {
-    grid-area: sensibo-fan-level-res;
-    background-color:rgb(211, 223, 159);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-area: sensibo-fan-level-res;
+  background-color: rgb(211, 223, 159);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sensibo-failure-reason {
-    grid-area: sensibo-failure-reason;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-failure-reason;
+  background-color: rgb(211, 223, 159);
 }
 .sensibo-failure-reason-res {
-    grid-area: sensibo-failure-reason-res;
-    background-color:rgb(211, 223, 159);
+  grid-area: sensibo-failure-reason-res;
+  background-color: rgb(211, 223, 159);
 }
-
 
 .netatmo-wrapper {
-
-    box-sizing: border-box;
-    padding: 10px;
-    grid-area: netatmo;
-    background-color:whitesmoke;
-    max-height: 100%;
-    display: grid;
-    grid-template-columns: 30% 30% 15% 25%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-      "netatmo-logo netatmo-logo netatmo-logo netatmo-indication"
-      "netatmo-status netatmo-status . netatmo-status-res"
-      "netatmo-measured-temp netatmo-measured-temp . ."
-      "netatmo-measured-temp netatmo-measured-temp . ."
-      "netatmo-humidity . . ."
-      "netatmo-mode netatmo-mode . netatmo-mode-res"
-      "netatmo-set-temp netatmo-set-temp . netatmo-set-temp-res"
-      "netatmo-battery-level netatmo-battery-level . netatmo-battery-level-res"
-      "netatmo-failure-reason . netatmo-failure-reason-res netatmo-failure-reason-res";
-
+  box-sizing: border-box;
+  padding: 10px;
+  grid-area: netatmo;
+  background-color: whitesmoke;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 30% 30% 15% 25%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "netatmo-logo netatmo-logo netatmo-logo netatmo-indication"
+    "netatmo-status netatmo-status . netatmo-status-res"
+    "netatmo-measured-temp netatmo-measured-temp . ."
+    "netatmo-measured-temp netatmo-measured-temp . ."
+    "netatmo-humidity . . ."
+    "netatmo-mode netatmo-mode . netatmo-mode-res"
+    "netatmo-set-temp netatmo-set-temp . netatmo-set-temp-res"
+    "netatmo-battery-level netatmo-battery-level . netatmo-battery-level-res"
+    "netatmo-failure-reason . netatmo-failure-reason-res netatmo-failure-reason-res";
 }
 
-.netatmo-wrapper p{
-    margin: 0;
-    padding: 0;
-    padding-left: 5px;
-    font-size: 20px;
-
+.netatmo-wrapper p {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  font-size: 20px;
 }
 
 .netatmo-logo {
-    grid-area: netatmo-logo;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-logo;
+  background-color: rgb(243, 229, 152);
 }
 
 .netatmo-logo h5 {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
 }
 .netatmo-indication {
-    grid-area: netatmo-indication;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-indication;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-status {
-    grid-area: netatmo-status;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-status;
+  background-color: rgb(243, 229, 152);
 }
 
 .netatmo-status-res {
-    grid-area: netatmo-status-res;
-    background-color:rgb(243, 229, 152);
-
+  grid-area: netatmo-status-res;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-measured-temp {
-    grid-area: netatmo-measured-temp;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-measured-temp;
+  background-color: rgb(243, 229, 152);
 }
 
-.netatmo-measured-temp p{
-
-    font-size: 50px;
-    margin: 0;
+.netatmo-measured-temp p {
+  font-size: 50px;
+  margin: 0;
 }
 .netatmo-humidity {
-    grid-area: netatmo-humidity;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-humidity;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-mode {
-    grid-area: netatmo-mode;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-mode;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-mode-res {
-    grid-area: netatmo-mode-res;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-mode-res;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-set-temp {
-    grid-area: netatmo-set-temp;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-set-temp;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-set-temp-res {
-    grid-area: netatmo-set-temp-res;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-set-temp-res;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-battery-level {
-    grid-area: netatmo-battery-level;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-battery-level;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-battery-level-res {
-    grid-area: netatmo-battery-level-res;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-battery-level-res;
+  background-color: rgb(243, 229, 152);
 }
 
 .netatmo-failure-reason {
-    grid-area: netatmo-failure-reason;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-failure-reason;
+  background-color: rgb(243, 229, 152);
 }
 .netatmo-failure-reason-res {
-    grid-area: netatmo-failure-reason-res;
-    background-color:rgb(243, 229, 152);
+  grid-area: netatmo-failure-reason-res;
+  background-color: rgb(243, 229, 152);
 }
 
-
-.control-panel{
-    height:700px;
-    border-radius: 10px;
+.control-panel {
+  height: 700px;
+  border-radius: 10px;
 }
 
-.settings-container{
-    height:600px;
-    padding: -10px;
+.settings-container {
+  height: 600px;
+  padding: -10px;
 }
 
-
-.devices-container{
-    height: 600px;
-    padding: 0px;
-
+.devices-container {
+  height: 600px;
+  padding: 0px;
 }
-
 
 /* PAGE 2 */
-
 
 /* PAGE 3 */
 
 .page-3 {
-    padding-top: 64px; 
-    min-height: 980px;
-    background-color: khaki;
-    display: flex;
-    align-items: center;
+  padding-top: 64px;
+  min-height: 980px;
+  background-color: khaki;
+  display: flex;
+  align-items: center;
 }
 
-.graph-area{
- background-color: rgb(255, 208, 205);
- height: 800px;
- display: flex;
- align-items: center;
- justify-content: center;
- border-radius: 10px;
-border: 2px solid orange;
- 
+.graph-area {
+  background-color: rgb(255, 208, 205);
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid orange;
 }
-
 
 .page-4 {
-    padding-top: 64px; 
-    min-height: 980px;
-    background-color: green;
-    display: flex;
-    align-items: center;
+  padding-top: 64px;
+  min-height: 980px;
+  background-color: green;
+  display: flex;
+  align-items: center;
 }
 
-.about-us{
-    background-color: rgb(255, 208, 205);
-    height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-   border: 2px solid orange;
-    
-   }
+.about-us {
+  background-color: rgb(255, 208, 205);
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid orange;
+}
 
 .page-5 {
-    padding-top: 64px; 
-    min-height: 980px;
-    background-color: rgb(240, 196, 196);
+  padding-top: 64px;
+  min-height: 980px;
+  background-color: rgb(240, 196, 196);
 }
 
 .user-review {
 }
 
 .free-space {
-
-    height: 500px;
-    background-image: url(../images/winter2.jpg);
-    width:100%;
-    background-size:cover;
-    filter: grayscale(80%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 500px;
+  background-image: url(../images/winter2.jpg);
+  width: 100%;
+  background-size: cover;
+  filter: grayscale(80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* KOVOJU SU MATERIALIZE :D */
 
-input[type=range]::-webkit-slider-thumb {
-    background-color:orangered;
-  }
-  input[type=range]::-moz-range-thumb {
-    background-color: orangered;
-  }
-  input[type=range]::-ms-thumb {
-    background-color: orangered;
-  }
+input[type="range"]::-webkit-slider-thumb {
+  background-color: orangered;
+}
+input[type="range"]::-moz-range-thumb {
+  background-color: orangered;
+}
+input[type="range"]::-ms-thumb {
+  background-color: orangered;
+}
 
-  /***** These are to edit the thumb and the text inside the thumb *****/
-  input[type=range] + .thumb {
-    background-color: rgb(240, 219, 199);
-  }
-  input[type=range] + .thumb.active .value {
-    color: rgb(0, 0, 0);
-  }
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type="range"] + .thumb {
+  background-color: rgb(240, 219, 199);
+}
+input[type="range"] + .thumb.active .value {
+  color: rgb(0, 0, 0);
+}

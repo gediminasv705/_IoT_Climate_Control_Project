@@ -1,15 +1,6 @@
 function netatmoGetData() {
-  var time = new Date();
-  var mytime =
-    " [ " +
-    time.getHours() +
-    ":" +
-    time.getMinutes() +
-    ":" +
-    time.getSeconds() +
-    " ] ";
 
-  console.log(mytime + "Netatmo duomenys atnaujinami");
+logFormatter("  Netatmo duomenys atnaujinami  ");
 
   netatmoInfo();
   //netatmoMeasurements();
@@ -25,7 +16,10 @@ function netatmoGetData() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
-      console.log(mytime + "Netatmo gauti duomenys: " + data);
+
+      logFormatter("  Netatmo gauti duomenys:  ");
+      console.log(data);
+
       var decodedData = JSON.parse(data);
       var roomPath = decodedData.body.home.rooms["0"];
 
@@ -38,6 +32,10 @@ function netatmoGetData() {
       var netatmoOutputState = decodedData.body.home.modules["1"].boiler_status;
 
       if (netatmoStatus == "ok") {
+
+        document.getElementById("answer-netatmo").classList.add("green-text");
+        document.getElementById("answer-netatmo").innerHTML = "<p>Netatmo nustatymai sėkmingai gauti</p>";
+
         document.getElementById("netatmo-status-res").innerHTML = "Connected";
         document.getElementById("netatmo-measured-temp").innerHTML =
           netatmoMeasuredTemp + "°C";
@@ -60,7 +58,12 @@ function netatmoGetData() {
       } else {
         document.getElementById("netatmo-status-res").innerHTML =
           "Not connected";
+
+          document.getElementById("answer-netatmo").classList.add("red-text");
+          document.getElementById("answer-netatmo").innerHTML = "<p>Nepavyko gauti Netatmo nustatymų</p>"
+
       }
+
     });
   }
 
@@ -83,4 +86,5 @@ function netatmoGetData() {
       }
     });
   }
+
 }
