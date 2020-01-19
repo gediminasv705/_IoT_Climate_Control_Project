@@ -26,27 +26,38 @@
 
             <div class="container top-row" id="top-row">
 
-                <div>
-                    <a href="netatmo_html.php">
-                        <h1><i class="large material-icons">beach_access</i>G climate</h1>
-                    </a>
-                    <h3 class="orange-text">Perfect climate no matter the weather</h3>
-                    <h4><?php echo date('l, F jS, Y'); ?></h4>
-                </div>
+                <div class='top-row-wrapper'>
 
-                <div class="user-settings">
+                    <div class='top-left-wrapper'>
 
-                    <div class="user-picture">
-                        <img src="https://picsum.photos/80" alt="">
+                        <div>
+                            <a href="netatmo_html.php">
+                                <h1><i class="large material-icons">beach_access</i>G climate</h1>
+                            </a>
+                            <h3 class="orange-text">Perfect climate no matter the weather</h3>
+                            <h4><?php echo date('l, F jS, Y'); ?></h4>
+                        </div>
+
                     </div>
-                    <ul class="collection">
-                        <li><a href="#">Hello Gediminas!</a></li>
-                        <li><a href="#">User settings</a></li>
-                        <li><a href="#">Meniu item 2</a></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
+
+                    <div class="user-settings">
+
+                        <div>
+                            <div class="user-picture">
+                                <img src="https://picsum.photos/80" alt="">
+                            </div>
+                            <ul class="collection">
+                                <li><a href="#">Hello Gediminas!</a></li>
+                                <li><a href="#">User settings</a></li>
+                                <li><a href="#">Meniu item 2</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
 
                 </div>
+
             </div>
 
 
@@ -397,7 +408,7 @@
     <script src="scripts/refresh.js"></script>
     <script src="scripts/parallax.js"></script>
     <script src="scripts/navbar.js"></script>
-    <script src="scripts/sensibo_get.js"></script> 
+    <script src="scripts/sensibo_get.js"></script>
     <script src="scripts/main_script.js"></script>
 </body>
 

@@ -18,12 +18,32 @@ p {
 
 /* test */
 
+.top-row-wrapper{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+}
 .top-row{
     height: 300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;  
+
 }
+
+.top-left-wrapper{
+    display:flex;
+    align-items: center;
+}
+
+.top-left-wrapper h4{
+    margin-bottom: 10px;
+}
+.top-left-wrapper h1{
+    margin-top: 20px;
+}
+
+
 
 .top-row-fixed{
     margin-bottom: 112px;
@@ -47,9 +67,9 @@ p {
     width: 150px;
     background-color: rgba(255, 255, 255, 0.7);
     right: 0px;
-    transform: translateY(-50%);
-    top: 50%;
-    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
