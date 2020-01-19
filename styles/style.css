@@ -126,10 +126,9 @@ top: 50px;
 /* PAGE 1 */
 
 .page-1{
-    background-image: url(../images/winter2.jpg);
+
     width:100%;
-    min-height: 980px;
-    background-size:cover;
+    min-height: 980px;  
 }
 
 .page-1 div .collection {

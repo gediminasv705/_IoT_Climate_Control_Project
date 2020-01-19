@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/parallax-background.min.js"></script>
 
 </head>
 
@@ -394,10 +395,9 @@
     <script src="scripts/netatmo_get.js"></script>
     <script src="scripts/send.js"></script>
     <script src="scripts/refresh.js"></script>
-
-    <script src="scripts/sensibo_get.js"></script>
-
-    <script src="scripts/interface.js"></script>
+    <script src="scripts/parallax.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/sensibo_get.js"></script> 
     <script src="scripts/main_script.js"></script>
 </body>
 
