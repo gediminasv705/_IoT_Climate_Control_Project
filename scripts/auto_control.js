@@ -1,4 +1,8 @@
 function automaticControl() {
+
+
+
+
   interval = setInterval(function() {
     refresh();
 
@@ -8,8 +12,8 @@ function automaticControl() {
     var deadBand = 1;
 
     var setTemp = netatmoSetTemp;
-    var sensiboOn;
-    var sensiboMode = "cool";
+    var sensiboOn = "true";
+    var sensiboMode = "heat";
     var sensiboFanLevel = "auto";
 
     var sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
@@ -26,16 +30,15 @@ function automaticControl() {
     }
 
     if (netatmoSetTemp < netatmoGetTemp - deadBand) {
-      sensiboOn = "true";
       sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
       sensiboSend(sendData);
     } else if (netatmoSetTemp > netatmoGetTemp + deadBand) {
       console.log("gediminas");
 
-      sensiboOn = "false";
       sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
       console.log(sendData);
       sensiboSend(sendData);
     }
+
   }, 10000);
 }

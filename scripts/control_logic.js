@@ -112,8 +112,8 @@ function controlLogic() {
     var settings = {
       setTemp: tempSelect.value,
       sensiboOn: "true",
-      sensiboMode: "heat",
-      sensiboFanLevel: "auto"
+      sensiboMode: climateMode.value,
+      sensiboFanLevel: fanSpeed.value
     };
 
     sensiboSend(settings);

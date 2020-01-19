@@ -153,9 +153,9 @@
                 <div class="input-field col s12">
                     <select id="select-fan-speed">
                         <option value="auto">auto</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="low">low</option>
+                        <option value="medium">medium</option>
+                        <option value="high">high</option>
                     </select>
                     <label>Fan speed</label>
                 </div>
