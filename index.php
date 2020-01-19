@@ -143,6 +143,13 @@
                 <form action="">
                     <H5>Select climate settings</H5>
                     <div class="input-field col s12">
+                        <select id="select-control-mode">
+                            <option value="heat">Automatic</option>
+                            <option value="cool">Manual</option>
+                        </select>
+                        <label>Select control mode</label>
+                    </div>
+                    <div class="input-field col s12">
                         <select id="select-climate-mode">
                             <option value="heat">Heating</option>
                             <option value="cool">Cooling</option>
@@ -194,8 +201,8 @@
                     <p id="answer">Laukiama užklausos</p>
                 </div>
                 <div class="button-confirm">
-                        <a id="refresh-data" class="waves-effect waves-light btn-large button-confirm orange darken-4">Refresh data<i class="material-icons right">build</i></a>
-                    </div>
+                    <a id="refresh-data" class="waves-effect waves-light btn-large button-confirm orange darken-4">Refresh data<i class="material-icons right">autorenew</i></a>
+                </div>
             </div>
 
             <div class="sensibo-wrapper">
@@ -381,7 +388,9 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>M.AutoInit()</script>
+    <script>
+        M.AutoInit()
+    </script>
     <script src="scripts/netatmo_get.js"></script>
     <script src="scripts/send.js"></script>
     <script src="scripts/refresh.js"></script>
