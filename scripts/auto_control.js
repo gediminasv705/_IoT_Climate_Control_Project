@@ -7,7 +7,8 @@ function automaticControl() {
     var netatmoSetTemp = netatmoSetpointTemp;
     var netatmoGetTemp = netatmoMeasuredTemp;
     var sensiboSetTemp = sensiboTargetTemp;
-    var deadBand = 1;
+    var deadBand = 0.5;
+    var boostTempDiff = 4;
 
     var setTemp = netatmoSetTemp;
     var sensiboOn = "true";
@@ -32,18 +33,39 @@ function automaticControl() {
     }
 
 
-    if (netatmoSetTemp < netatmoGetTemp - deadBand) {
-      sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
-      sensiboSend(sendData);
+    if (netatmoSetTemp < netatmoGetTemp - deadBand && netatmoSetTemp - netatmoGetTemp < boostTempDiff) {
+        
+        console.log('COOLING');
+        console.log(netatmoSetTemp - netatmoGetTemp); 
+        console.log(boostTempDiff); 
 
-    } else if (netatmoSetTemp > netatmoGetTemp + deadBand) {
+        sensiboOn = "true";
+        sensiboMode = "cool";
+        sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
+        sensiboSend(sendData);
 
-    //sensiboOn = "false";
+    } else if (netatmoSetTemp > netatmoGetTemp + deadBand && netatmoSetTemp - netatmoGetTemp < boostTempDiff) {
+
+        console.log('HEATING');
+        console.log(netatmoSetTemp - netatmoGetTemp); 
+        console.log(boostTempDiff); 
+
+    sensiboOn = "false";
     sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
-    console.log(sendData);
+    sensiboSend(sendData);
 
-      sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
-      sensiboSend(sendData);
+    } else if (netatmoSetTemp - netatmoGetTemp > boostTempDiff){
+
+        console.log('turboHEATING');
+        console.log(netatmoSetTemp - netatmoGetTemp); 
+        console.log(boostTempDiff); 
+  
+        sensiboOn = "true";
+        sensiboMode = "heat";
+        sensiboFanLevel = "high";
+        sendData = sensiboSet(setTemp, sensiboOn, sensiboMode, sensiboFanLevel);
+        sensiboSend(sendData);
+        
     }
 
   }, 10000);

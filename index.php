@@ -144,8 +144,8 @@
 
                 <div class="input-field col s12">
                     <select id="select-heating-devices">
-                        <option value="boiler">Boiler</option>
-                        <option value="boiler-fancoil">Boiler + Fancoil</option>
+                        <option value="netatmo+sensibo">Netamo + Sensibo</option>
+                        <option value="netatmo">Netatmo</option>
                     </select>
                     <label>Heating devices</label>
                 </div>
@@ -201,7 +201,7 @@
             </div>
 
             <div class="sensibo-indication grid-center">
-                <i class="small material-icons green-text">power_settings_new</i>
+                <i id="sensibo-status-icon" class="small material-icons red-text">power_settings_new</i>
             </div>
 
             <div class="sensibo-status grid-vertical-center">
@@ -260,7 +260,7 @@
             </div>
 
             <div class="netatmo-indication grid-center">
-                <i class="small material-icons green-text">power_settings_new</i>
+                <i id="netatmo-status-icon" class="small material-icons red-text">power_settings_new</i>
             </div>
 
             <div class="netatmo-status grid-vertical-center">

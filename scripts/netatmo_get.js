@@ -38,7 +38,8 @@ logFormatter("  Netatmo duomenys atnaujinami  ");
 
         document.getElementById("answer-netatmo").classList.add("green-text");
         document.getElementById("answer-netatmo").innerHTML = "<p>Netatmo nustatymai sėkmingai gauti</p>";
-
+        document.getElementById("netatmo-status-icon").classList.remove("red-text");
+        document.getElementById("netatmo-status-icon").classList.add("green-text");
         document.getElementById("netatmo-status-res").innerHTML = "Connected";
         document.getElementById("netatmo-measured-temp").innerHTML =
           netatmoMeasuredTemp + "°C";
@@ -64,6 +65,8 @@ logFormatter("  Netatmo duomenys atnaujinami  ");
 
           document.getElementById("answer-netatmo").classList.add("red-text");
           document.getElementById("answer-netatmo").innerHTML = "<p>Nepavyko gauti Netatmo nustatymų</p>"
+          document.getElementById("netatmo-status-icon").classList.remove("green-text");
+          document.getElementById("netatmo-status-icon").classList.add("red-text");
 
       }
 

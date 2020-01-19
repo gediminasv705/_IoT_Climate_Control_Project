@@ -67,6 +67,8 @@ function sensiboGetData() {
         document.getElementById("sensibo-set-temp").innerHTML = sensiboTargetTemp + "°" + sensiboTempUnit;
         document.getElementById("sensibo-mode").innerHTML = sensiboMode;
         document.getElementById("sensibo-fan-level").innerHTML = sensiboFanLevel;
+        document.getElementById("sensibo-status-icon").classList.add("green-text");
+        document.getElementById("sensibo-status-icon").classList.remove("red-text");
 
         if (sensiboOn) {
           document.getElementById("sensibo-device-status").innerHTML =
@@ -78,6 +80,8 @@ function sensiboGetData() {
       } else {
         document.getElementById("answer-sensibo").classList.add("red-text");
         document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
+        document.getElementById("sensibo-status-icon").classList.add("red-text");
+        document.getElementById("sensibo-status-icon").classList.remove("green-text");
       }
       
     });

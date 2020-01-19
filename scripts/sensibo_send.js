@@ -14,6 +14,7 @@ function sensiboSend(settings) {
 
     $.post(url, { myData: myJSON }, function(data) {
       logFormatter("  Sensibo serverio atsakymas:  ");
+
       console.log(data);
       var decodedData = JSON.parse(data);
       var status = decodedData.status;
@@ -25,5 +26,6 @@ function sensiboSend(settings) {
         document.getElementById("answer-sensibo").classList.add("red-text");
         document.getElementById("answer-sensibo").innerHTML = "<p>Sensibo serveriui užklausos išsiūsti nepavyko</p>";
       }
+
     });
   }
