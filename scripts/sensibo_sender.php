@@ -2,7 +2,7 @@
 
 include 'sensibo_config.php';
 
-sensibo_set_parameters($host, $device_id, $api_key);
+echo sensibo_set_parameters($host, $device_id, $api_key);
 
 function sensibo_set_parameters($host, $device_id, $api_key){
 
@@ -29,8 +29,6 @@ $data = '{
         "swing": "stopped"
     }
 }';
-
-echo $data;
 
 curl_setopt($curl, CURLOPT_URL, $request_url);
 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');

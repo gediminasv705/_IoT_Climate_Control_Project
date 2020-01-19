@@ -23,7 +23,6 @@ $path = $decoded_json['path'];
 
 $path_send = $path . "?home_id=" . $home_id . "&room_id=" . $room_id . "&mode=manual&temp=" . $temp;
 
-echo $path_send;
 //Kviečiu dar kartą access token, kad pakeisčiau scope į write thermostat
 $netatmo_access_token = netatmo_access_token($username, $password, $scope, $host, $client_id, $client_secret);
 echo netatmo_post($path_send, $host, $netatmo_access_token);

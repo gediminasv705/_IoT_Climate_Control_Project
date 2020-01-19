@@ -1,14 +1,16 @@
 
 function refresh(){
 
-$("#refresh").click(function(){
-    netatmoGetInit();
-    sensiboGetInit();
+$("#refresh-data").click(function(){
+    netatmoGetData();
+    sensiboGetData();
 })
 
+
+// negaliu per dažnai siųsti užklausas dėl serverių apribojimų
 setInterval(function(){ 
-    //netatmoGetInit();
-    //sensiboGetInit();
-}, 4000);
+    //netatmoGetData();
+    //sensiboGetData();
+}, 10000);
 
 }

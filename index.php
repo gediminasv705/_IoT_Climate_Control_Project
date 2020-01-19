@@ -140,60 +140,62 @@
 
             <div class="settings-wrapper">
 
-                <H5>Select climate settings</H5>
-                <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Choose your climate mode</option>
-                        <option value="1">Heating</option>
-                        <option value="2">Cooling</option>
-                        <option value="3">Auto</option>
-                    </select>
-                    <label>Climate mode</label>
-                </div>
-                <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Choose your heating devices</option>
-                        <option value="1">Boiler</option>
-                        <option value="2">Boiler + Fancoil</option>
-                    </select>
-                    <label>Heating devices</label>
-                </div>
-                <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Choose your fan speed</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">Auto</option>
-                    </select>
-                    <label>Fan speed</label>
-                </div>
-
-                <label class="temperature-label">Select comfortable temperature</label>
-                <div class="temp-select">
-                    <div class="temp-row">
-                        <a class="btn-floating btn-large waves-effect waves-light orange darken-4"><i class="material-icons">add</i></a>
-                        <div class="input-field col s2 offset-s1">
-                            <input value="21" id="temp-select" type="text" class="validate">
-                        </div>
-                        <a class="btn-floating btn-large waves-effect waves-light orange darken-4"><i class="material-icons">add</i></a>
+                <form action="">
+                    <H5>Select climate settings</H5>
+                    <div class="input-field col s12">
+                        <select id="select-climate-mode">
+                            <option value="heat">Heating</option>
+                            <option value="cool">Cooling</option>
+                            <option value="auto">Auto</option>
+                        </select>
+                        <label>Climate mode</label>
                     </div>
-                </div>
+                    <div class="input-field col s12">
+                        <select id="select-heating-devices">
+                            <option value="boiler">Boiler</option>
+                            <option value="boiler-fancoil">Boiler + Fancoil</option>
+                        </select>
+                        <label>Heating devices</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="select-fan-speed">
+                            <option value="auto">auto</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <label>Fan speed</label>
+                    </div>
 
-                <div>
-                    <p class="range-field">
-                        <input type="range" id="test5" min="0" max="100" />
-                    </p>
+                    <label class="temperature-label">Select comfortable temperature</label>
+                    <div class="temp-select">
+                        <div class="temp-row">
+                            <a id="btn-temp-down" class="btn-floating btn-large waves-effect waves-light orange darken-4"><i class="material-icons">keyboard_arrow_down</i></a>
+                            <div class="input-field col s2 offset-s1">
+                                <input value="21" id="temp-select" type="text" class="validate">
+                            </div>
+                            <a id="btn-temp-up" class="btn-floating btn-large waves-effect waves-light orange darken-4"><i class="material-icons">keyboard_arrow_up</i></a>
+                        </div>
+                    </div>
 
-                </div>
+                    <div>
+                        <p class="range-field">
+                            <input type="range" id="temp-slider" min="18" max="30" />
+                        </p>
 
-                <div class="confirm-btn-wrapper">
+                    </div>
+
                     <div class="button-confirm">
-                        <a class="waves-effect waves-light btn-large button-confirm orange darken-4">Confirm<i class="material-icons right">build</i></a>
-                    </div> 
+                        <a id="confirm" class="waves-effect waves-light btn-large button-confirm orange darken-4">Confirm<i class="material-icons right">build</i></a>
+                    </div>
+
+                </form>
+                <div class="answer">
+                    <p id="answer">Laukiama užklausos</p>
                 </div>
-
-
+                <div class="button-confirm">
+                        <a id="refresh-data" class="waves-effect waves-light btn-large button-confirm orange darken-4">Refresh data<i class="material-icons right">build</i></a>
+                    </div>
             </div>
 
             <div class="sensibo-wrapper">
@@ -379,9 +381,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        M.AutoInit()
-    </script>
+    <script>M.AutoInit()</script>
     <script src="scripts/netatmo_get.js"></script>
     <script src="scripts/send.js"></script>
     <script src="scripts/refresh.js"></script>

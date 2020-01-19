@@ -1,6 +1,15 @@
-function sensiboGetInit() {
+function sensiboGetData() {
+  var time = new Date();
+  var mytime =
+    " [ " +
+    time.getHours() +
+    ":" +
+    time.getMinutes() +
+    ":" +
+    time.getSeconds() +
+    " ] ";
 
-  console.log('sensibo data refreshed');
+  console.log(mytime + "Sensibo duomenys atnaujinami");
 
   sensiboMeasurements();
   sensiboAcStates();
@@ -11,6 +20,7 @@ function sensiboGetInit() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
+      console.log(mytime + "Sensibo gauti nustatymai: " + data);
       var decodedData = JSON.parse(data);
 
       var sensiboStatus = decodedData.status;
@@ -18,8 +28,10 @@ function sensiboGetInit() {
       var sensiboHumidity = decodedData.result["0"].humidity;
 
       if (sensiboStatus == "success") {
-        document.getElementById("sensibo-measured-temp").innerHTML = sensiboTemperature + "°C";
-        document.getElementById("sensibo-humidity").innerHTML = "H " + sensiboHumidity + "%";
+        document.getElementById("sensibo-measured-temp").innerHTML =
+          sensiboTemperature + "°C";
+        document.getElementById("sensibo-humidity").innerHTML =
+          "H " + sensiboHumidity + "%";
       }
     });
   }
@@ -30,6 +42,7 @@ function sensiboGetInit() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
+      console.log(mytime + "Sensibo gauti matavimai: " + data);
       var decodedData = JSON.parse(data);
       var roomPath = decodedData.result["0"];
 

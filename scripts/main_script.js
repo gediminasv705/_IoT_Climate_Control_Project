@@ -1,9 +1,10 @@
 
 $('document').ready(function () {
 
-    sensiboGetInit();
-    netatmoGetInit();
+    sensiboGetData();
+    netatmoGetData();
     navbarScroll();
+    sendData();
     refresh();
 
 
