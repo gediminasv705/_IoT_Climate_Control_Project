@@ -14,50 +14,50 @@ function controlLogic() {
       btnTempUp.classList.add("disabled");
       btnTempDown.classList.add("disabled");
       confirm.classList.add("disabled");
-
       automaticControl();
     } else {
       btnTempUp.classList.remove("disabled");
       btnTempDown.classList.remove("disabled");
       confirm.classList.remove("disabled");
-
-      $("#btn-temp-up").click(function() {
-        if (tempSelect.value < 30 && tempSelect.value >= 17) {
-          btnTempUp.classList.remove("disabled");
-          btnTempDown.classList.remove("disabled");
-          tempSelect.value++;
-          tempSlider.value = tempSelect.value;
-        } else if (tempSelect.value == 30) {
-          btnTempUp.classList.add("disabled");
-        }
-      });
-
-      $("#btn-temp-down").click(function() {
-        if (tempSelect.value > 17 && tempSelect.value <= 30) {
-          btnTempUp.classList.remove("disabled");
-          btnTempDown.classList.remove("disabled");
-          tempSelect.value--;
-          tempSlider.value = tempSelect.value;
-        } else if (tempSelect.value == 17) {
-          btnTempDown.classList.add("disabled");
-        }
-      });
-
-      $("#temp-slider").click(function() {
-        tempSelect.value = tempSlider.value;
-
-        if (tempSelect.value == 30) {
-          btnTempUp.classList.add("disabled");
-        } else {
-          btnTempUp.classList.remove("disabled");
-        }
-        if (tempSelect.value == 17) {
-          btnTempDown.classList.add("disabled");
-        } else {
-          btnTempDown.classList.remove("disabled");
-        }
-      });
+      clearInterval(interval);
     }
+
+    $("#btn-temp-up").click(function() {
+      if (tempSelect.value < 30 && tempSelect.value >= 17) {
+        btnTempUp.classList.remove("disabled");
+        btnTempDown.classList.remove("disabled");
+        tempSelect.value++;
+        tempSlider.value = tempSelect.value;
+      } else if (tempSelect.value == 30) {
+        btnTempUp.classList.add("disabled");
+      }
+    });
+
+    $("#btn-temp-down").click(function() {
+      if (tempSelect.value > 17 && tempSelect.value <= 30) {
+        btnTempUp.classList.remove("disabled");
+        btnTempDown.classList.remove("disabled");
+        tempSelect.value--;
+        tempSlider.value = tempSelect.value;
+      } else if (tempSelect.value == 17) {
+        btnTempDown.classList.add("disabled");
+      }
+    });
+
+    $("#temp-slider").click(function() {
+      tempSelect.value = tempSlider.value;
+
+      if (tempSelect.value == 30) {
+        btnTempUp.classList.add("disabled");
+      } else {
+        btnTempUp.classList.remove("disabled");
+      }
+      if (tempSelect.value == 17) {
+        btnTempDown.classList.add("disabled");
+      } else {
+        btnTempDown.classList.remove("disabled");
+      }
+    });
   });
 
   $("#btn-temp-up").click(function() {
@@ -97,8 +97,11 @@ function controlLogic() {
     }
   });
 
-  $("#confirm").click(function() {
+  $("#refresh-data").click(function() {
+    refresh();
+  });
 
+  $("#confirm").click(function() {
     document.getElementById("answer-sensibo").classList.remove("green-text");
     document.getElementById("answer-netatmo").classList.remove("green-text");
     document.getElementById("answer-sensibo").classList.remove("red-text");
@@ -116,5 +119,4 @@ function controlLogic() {
     sensiboSend(settings);
     netatmoSend(settings);
   });
-
 }

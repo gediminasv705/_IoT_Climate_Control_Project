@@ -1,10 +1,8 @@
 
 $('document').ready(function () {
 
-    sensiboGetData();
-    netatmoGetData();
-    controlLogic();
     refresh();
+    controlLogic();
 
     navbarScroll();
     parallax();

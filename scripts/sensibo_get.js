@@ -3,7 +3,9 @@ function sensiboGetData() {
   logFormatter("  Sensibo duomenys atnaujinami  ");
 
   sensiboMeasurements();
+
   sensiboAcStates();
+
 
   function sensiboMeasurements() {
     var url = "scripts/sensibo_getter.php";
@@ -26,6 +28,10 @@ function sensiboGetData() {
           sensiboTemperature + "°C";
         document.getElementById("sensibo-humidity").innerHTML =
           "H " + sensiboHumidity + "%";
+          sensiboAcStates();
+      } else {
+        document.getElementById("answer-sensibo").classList.add("red-text");
+        document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
       }
     });
   }
