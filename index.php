@@ -18,7 +18,7 @@
                         <h4><?php echo date('l, F jS, Y'); ?></h4>
                     </div>
                 </div>
-                
+
                 <div class="user-settings">
                     <div>
                         <div class="user-picture">
@@ -78,11 +78,11 @@
                     <h5>Sensibo Login</h5>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="sensibo" type="text" name="sensibo" class="validate">
-                            <label for="sensibo" class="orange-text text-darken-4">Sensibo API key</label>
+                            <input id="sensibo-key" type="text" name="sensibo-key" class="validate">
+                            <label for="sensibo-key" class="orange-text text-darken-4">Sensibo API key</label>
                         </div>
                     </div>
-                    <button class="btn waves-effect orange darken-4" type="submit" name="action">Sensibo login
+                    <button id="sensibo-login" class="btn waves-effect orange darken-4">Sensibo login
                         <i class="material-icons right">lock_open</i>
                     </button>
                 </form>
@@ -99,7 +99,7 @@
                             <label for="password" class="orange-text text-darken-4">Password</label>
                         </div>
                     </div>
-                    <button class="btn waves-effect orange darken-4" type="submit" name="action">netatmo login
+                    <button class="btn waves-effect orange darken-4">netatmo login
                         <i class="material-icons right">lock_open</i>
                     </button>
                 </form>
@@ -322,9 +322,11 @@
 <!-- Graph page -->
 
 <div id="page-3" class="page-3">
+
     <div class="container">
         <div class="graph-area">
-            <h3>This is graph area</h3>
+            <h5>Netatmo settings graph</h5>
+            <canvas id="myChart" width="400" height="200"></canvas>
         </div>
     </div>
 </div>
@@ -334,7 +336,26 @@
 <div id="page-4" class="page-4">
     <div class="container">
         <div class="about-us">
-            <h3>Information about us</h3>
+            <h5>Data log</h5>
+            <div class="logged-data-wrapper">
+                <div class="logged-data">
+                    <p>[2020-01-22 16:48] Lorem ipsum dolor sit amet consectetur adipisi
+                        cing elit. Corporis iste esse ipsam corrupti nec
+                        essitatibus veniam, aut veritatis, nobis quaerat
+                        ipsum explicabo hic totam soluta molestias? Quae
+                        rat voluptatibus ipsam praesentium officia!</p>
+                    <p>[2020-01-22 16:55] Lorem ipsum dolor sit amet consectetur adipisi
+                        cing elit. Corporis iste esse ipsam corrupti nec
+                        essitatibus veniam, aut veritatis, nobis quaerat
+                        ipsum explicabo hic totam soluta molestias? Quae
+                        rat voluptatibus ipsam praesentium officia!</p>
+                    <p>[2020-01-22 18:30] Lorem ipsum dolor sit amet consectetur adipisi
+                        cing elit. Corporis iste esse ipsam corrupti nec
+                        essitatibus veniam, aut veritatis, nobis quaerat
+                        ipsum explicabo hic totam soluta molestias? Quae
+                        rat voluptatibus ipsam praesentium officia!</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -45,6 +45,8 @@ logFormatter("  Netatmo duomenys atnaujinami  ");
           netatmoMeasuredTemp + "°C";
         document.getElementById("netatmo-set-temp").innerHTML =
           netatmoSetpointTemp + "°C";
+        document.getElementById("temp-select").value = Math.floor(netatmoSetpointTemp);
+        document.getElementById("temp-slider").value = Math.floor(netatmoSetpointTemp);
         document.getElementById(
           "netatmo-control-mode"
         ).innerHTML = netatmoSetpointMode;

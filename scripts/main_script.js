@@ -6,6 +6,8 @@ $('document').ready(function () {
 
     navbarScroll();
     parallax();
+    chartPlugin();
+    chart();
 
 });
 
