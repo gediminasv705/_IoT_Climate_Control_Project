@@ -3,7 +3,7 @@ $('document').ready(function () {
 
     sensiboGetData();
     netatmoGetData();
-    eventListeners();
+    controlLogic();
     refresh();
 
     navbarScroll();

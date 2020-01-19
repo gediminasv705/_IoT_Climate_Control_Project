@@ -127,8 +127,8 @@
 
                 <div class="input-field col s12">
                     <select id="select-control-mode">
-                        <option value="heat">Automatic</option>
-                        <option value="cool">Manual</option>
+                        <option value="manual">Manual</option>
+                        <option value="auto">Automatic</option>
                     </select>
                     <label>Select control mode</label>
                 </div>
@@ -173,7 +173,7 @@
 
                 <div>
                     <p class="range-field">
-                        <input type="range" id="temp-slider" min="18" max="30" />
+                        <input type="range" id="temp-slider" min="17" max="30" />
                     </p>
                 </div>
 

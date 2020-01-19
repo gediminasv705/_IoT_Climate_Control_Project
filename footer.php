@@ -5,9 +5,13 @@
     M.AutoInit()
 </script>
 <script src="scripts/netatmo_get.js"></script>
-<script src="scripts/send_settings.js"></script>
+<script src="scripts/sensibo_get.js"></script>
+<script src="scripts/sensibo_send.js"></script>
+<script src="scripts/netatmo_send.js"></script>
 <script src="scripts/refresh.js"></script>
-<script src="scripts/event_listeners.js"></script>
+<script src="scripts/auto_control.js"></script>
+<script src="scripts/control_logic.js"></script>
+
 
 <script src="scripts/log_formatter.js"></script>
 <script src="scripts/parallax.js"></script>

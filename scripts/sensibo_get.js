@@ -44,7 +44,10 @@ function sensiboGetData() {
       var roomPath = decodedData.result["0"];
 
       var sensiboStatus = roomPath.status;
-      var sensiboTargetTemp = roomPath.acState.targetTemperature;
+
+      // Nededu i var, nes naudoju auto_control funkcijoje
+      sensiboTargetTemp = roomPath.acState.targetTemperature;
+      
       var sensiboTempUnit = roomPath.acState.temperatureUnit;
       var sensiboOn = roomPath.acState.on;
       var sensiboMode = roomPath.acState.mode;

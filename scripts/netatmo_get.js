@@ -24,8 +24,11 @@ logFormatter("  Netatmo duomenys atnaujinami  ");
       var roomPath = decodedData.body.home.rooms["0"];
 
       var netatmoStatus = decodedData.status;
-      var netatmoMeasuredTemp = roomPath.therm_measured_temperature;
-      var netatmoSetpointTemp = roomPath.therm_setpoint_temperature;
+
+      // nededu į var nes naudoju auto_control funkcijoje
+      netatmoMeasuredTemp = roomPath.therm_measured_temperature;
+      netatmoSetpointTemp = roomPath.therm_setpoint_temperature;
+      
       var netatmoSetpointMode = roomPath.therm_setpoint_mode;
       var netatmoBatteryLevel =
         decodedData.body.home.modules["1"].battery_state;
