@@ -68,5 +68,5 @@ function automaticControl() {
         
     }
 
-  }, 10000);
+  }, 5000);
 }

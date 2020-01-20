@@ -43,9 +43,16 @@ logFormatter("  Netatmo duomenys atnaujinami  ");
         document.getElementById("netatmo-status-res").innerHTML = "Connected";
         document.getElementById("netatmo-measured-temp").innerHTML =
           netatmoMeasuredTemp + "°C";
+
+          if (
+            (netatmoSetpointTemp + "°C") !=
+            (document.getElementById("netatmo-set-temp").innerHTML)
+          ) {
+            netatmoBlink();
+          }
+
         document.getElementById("netatmo-set-temp").innerHTML =
           netatmoSetpointTemp + "°C";
-        netatmoBlink();
         document.getElementById("temp-select").value = Math.floor(netatmoSetpointTemp);
         document.getElementById("temp-slider").value = Math.floor(netatmoSetpointTemp);
         document.getElementById(

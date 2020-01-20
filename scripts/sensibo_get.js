@@ -1,11 +1,9 @@
 function sensiboGetData() {
-
   logFormatter("  Sensibo duomenys atnaujinami  ");
 
   sensiboMeasurements();
 
   sensiboAcStates();
-
 
   function sensiboMeasurements() {
     var url = "scripts/sensibo_getter.php";
@@ -13,7 +11,6 @@ function sensiboGetData() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
-
       logFormatter("  Sensibo gauti matavimai:   ");
       console.log(data);
 
@@ -28,10 +25,11 @@ function sensiboGetData() {
           sensiboTemperature + "°C";
         document.getElementById("sensibo-humidity").innerHTML =
           "H " + sensiboHumidity + "%";
-          sensiboAcStates();
+        sensiboAcStates();
       } else {
         document.getElementById("answer-sensibo").classList.add("red-text");
-        document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
+        document.getElementById("answer-sensibo").innerHTML =
+          "<p>Nepavyko gauti sensibo nustatymų</p>";
       }
     });
   }
@@ -42,7 +40,6 @@ function sensiboGetData() {
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {
-
       logFormatter("  Sensibo gauti nustatymai:   ");
       console.log(data);
 
@@ -53,23 +50,38 @@ function sensiboGetData() {
 
       // Nededu i var, nes naudoju auto_control funkcijoje
       sensiboTargetTemp = roomPath.acState.targetTemperature;
-      
+
       var sensiboTempUnit = roomPath.acState.temperatureUnit;
       var sensiboOn = roomPath.acState.on;
       var sensiboMode = roomPath.acState.mode;
       var sensiboFanLevel = roomPath.acState.fanLevel;
       var status = decodedData.status;
 
-      if (status == "success"){
+      if (status == "success") {
         document.getElementById("answer-sensibo").classList.add("green-text");
-        document.getElementById("answer-sensibo").innerHTML = "<p>Sensibo nustatymai sėkmingai gauti</p>";
+        document.getElementById("answer-sensibo").innerHTML =
+          "<p>Sensibo nustatymai sėkmingai gauti</p>";
         document.getElementById("sensibo-status").innerHTML = "Connected";
-        document.getElementById("sensibo-set-temp").innerHTML = sensiboTargetTemp + "°" + sensiboTempUnit;
-        sensiboBlink();
+
+        if (
+          (sensiboTargetTemp + "°" + sensiboTempUnit) !=
+          (document.getElementById("sensibo-set-temp").innerHTML)
+        ) {
+          sensiboBlink();
+        }
+        
+        document.getElementById("sensibo-set-temp").innerHTML =
+          sensiboTargetTemp + "°" + sensiboTempUnit;
         document.getElementById("sensibo-mode").innerHTML = sensiboMode;
-        document.getElementById("sensibo-fan-level").innerHTML = sensiboFanLevel;
-        document.getElementById("sensibo-status-icon").classList.add("green-text");
-        document.getElementById("sensibo-status-icon").classList.remove("red-text");
+        document.getElementById(
+          "sensibo-fan-level"
+        ).innerHTML = sensiboFanLevel;
+        document
+          .getElementById("sensibo-status-icon")
+          .classList.add("green-text");
+        document
+          .getElementById("sensibo-status-icon")
+          .classList.remove("red-text");
 
         if (sensiboOn) {
           document.getElementById("sensibo-device-status").innerHTML =
@@ -80,11 +92,15 @@ function sensiboGetData() {
         }
       } else {
         document.getElementById("answer-sensibo").classList.add("red-text");
-        document.getElementById("answer-sensibo").innerHTML = "<p>Nepavyko gauti sensibo nustatymų</p>";
-        document.getElementById("sensibo-status-icon").classList.add("red-text");
-        document.getElementById("sensibo-status-icon").classList.remove("green-text");
+        document.getElementById("answer-sensibo").innerHTML =
+          "<p>Nepavyko gauti sensibo nustatymų</p>";
+        document
+          .getElementById("sensibo-status-icon")
+          .classList.add("red-text");
+        document
+          .getElementById("sensibo-status-icon")
+          .classList.remove("green-text");
       }
-      
     });
   }
 }
