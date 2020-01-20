@@ -67,7 +67,7 @@ function sensiboGetData() {
           (sensiboTargetTemp + "°" + sensiboTempUnit) !=
           (document.getElementById("sensibo-set-temp").innerHTML)
         ) {
-          sensiboBlink();
+          sensiboBlink("sensibo-set-temp-div");
         }
         
         document.getElementById("sensibo-set-temp").innerHTML =
@@ -84,9 +84,21 @@ function sensiboGetData() {
           .classList.remove("red-text");
 
         if (sensiboOn) {
+          if (
+            ("Device is On") !=
+            (document.getElementById("sensibo-device-status").innerHTML)
+          ) {
+            sensiboBlink("sensibo-device-status-div");
+          } 
           document.getElementById("sensibo-device-status").innerHTML =
             "Device is On";
         } else {
+          if (
+            ("Device is Off") !=
+            (document.getElementById("sensibo-device-status").innerHTML)
+          ) {
+            sensiboBlink("sensibo-device-status-div");
+          } 
           document.getElementById("sensibo-device-status").innerHTML =
             "Device is Off";
         }

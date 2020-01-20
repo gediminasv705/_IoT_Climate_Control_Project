@@ -1,15 +1,15 @@
-function netatmoBlink() {
-  document.getElementById("netatmo-set-temp-div").classList.add("blink");
+function netatmoBlink(deviceId) {
+  document.getElementById(deviceId).classList.add("blink");
 
   setTimeout(function() {
-    document.getElementById("netatmo-set-temp-div").classList.remove("blink");
+    document.getElementById(deviceId).classList.remove("blink");
   }, 800);
 }
 
-function sensiboBlink() {
-  document.getElementById("sensibo-set-temp-div").classList.add("blink");
+function sensiboBlink(deviceId) {
+  document.getElementById(deviceId).classList.add("blink");
 
   setTimeout(function() {
-    document.getElementById("sensibo-set-temp-div").classList.remove("blink");
+    document.getElementById(deviceId).classList.remove("blink");
   }, 800);
 }

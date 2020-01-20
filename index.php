@@ -248,7 +248,7 @@
                 <p>Device status</p>
             </div>
 
-            <div class="sensibo-failure-reason-res grid-center">
+            <div id="sensibo-device-status-div" class="sensibo-failure-reason-res grid-center">
                 <p id="sensibo-device-status"></p>
             </div>
 
@@ -309,7 +309,7 @@
                 <p>Output status</p>
             </div>
 
-            <div class="netatmo-failure-reason-res grid-center">
+            <div id="netatmo-output-status-div" class="netatmo-failure-reason-res grid-center">
                 <p id="netatmo-output-status"></p>
             </div>
 

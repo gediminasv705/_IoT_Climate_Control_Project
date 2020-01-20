@@ -27,7 +27,6 @@ $netatmo_data_received = netatmo_post($path, $host, $netatmo_access_token);
 echo $netatmo_data_received;
 
 } else {
-
     echo 'error: bad reason';
 }
 
