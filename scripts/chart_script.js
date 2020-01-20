@@ -6,8 +6,8 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ['1', '2', '3', '4', '5', '6', '7', '11', '20', '8', '11', '20', '20', '8', '11', '20', '20', '8', '11', '20'],
         datasets: [{
-            label: 'Temperature changes',
-            data: [22, 23, 24, 28, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            label: 'Netatmo measured temperature changes',
+            data: [22, 23, 24, 28.5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

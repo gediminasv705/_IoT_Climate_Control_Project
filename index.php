@@ -126,6 +126,15 @@
                 <H5>Select climate settings</H5>
 
                 <div class="input-field col s12">
+                    <select id="select-heating-devices">
+                        <option value="netatmo+sensibo">Netamo + Sensibo</option>
+                        <option value="netatmo">Netatmo</option>
+                        <option value="sensibo">Sensibo</option>
+                    </select>
+                    <label>Controlled devices</label>
+                </div>
+
+                <div class="input-field col s12">
                     <select id="select-control-mode">
                         <option value="manual">Manual</option>
                         <option value="auto">Automatic</option>
@@ -140,14 +149,6 @@
                         <option value="auto">Auto</option>
                     </select>
                     <label>Climate mode</label>
-                </div>
-
-                <div class="input-field col s12">
-                    <select id="select-heating-devices">
-                        <option value="netatmo+sensibo">Netamo + Sensibo</option>
-                        <option value="netatmo">Netatmo</option>
-                    </select>
-                    <label>Heating devices</label>
                 </div>
 
                 <div class="input-field col s12">
