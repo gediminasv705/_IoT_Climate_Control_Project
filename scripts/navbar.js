@@ -1,3 +1,4 @@
+//Navbar prikabinimas prie viršaus ir puslapio nuvažiavimas pagal meniu pasirinkimą
 function navbarScroll() {
   var navbar = document.getElementById("navbar");
   var topRow = document.getElementById("top-row");

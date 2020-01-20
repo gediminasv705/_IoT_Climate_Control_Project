@@ -1,4 +1,4 @@
-
+//Pagrindinis skriptas, kuris paleidžia kitas funkcijas
 $('document').ready(function () {
 
     refresh();

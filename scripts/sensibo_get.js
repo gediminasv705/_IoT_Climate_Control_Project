@@ -2,9 +2,9 @@ function sensiboGetData() {
   logFormatter("  Sensibo duomenys atnaujinami  ");
 
   sensiboMeasurements();
-
   sensiboAcStates();
 
+  //Gaunu išmatuotus sensibo duomenis
   function sensiboMeasurements() {
     var url = "scripts/sensibo_getter.php";
     var obj = { reason: "measurements" };
@@ -20,12 +20,12 @@ function sensiboGetData() {
       var sensiboTemperature = decodedData.result["0"].temperature;
       var sensiboHumidity = decodedData.result["0"].humidity;
 
+      //Jeigu gavo matavimus, suformatuoju ir išvedu vartotojui
       if (sensiboStatus == "success") {
         document.getElementById("sensibo-measured-temp").innerHTML =
           sensiboTemperature + "°C";
         document.getElementById("sensibo-humidity").innerHTML =
           "H " + sensiboHumidity + "%";
-        sensiboAcStates();
       } else {
         document.getElementById("answer-sensibo").classList.add("red-text");
         document.getElementById("answer-sensibo").innerHTML =
@@ -34,6 +34,7 @@ function sensiboGetData() {
     });
   }
 
+   //Gaunu sensibo konfigūracijos duomenis
   function sensiboAcStates() {
     var url = "scripts/sensibo_getter.php";
     var obj = { reason: "acStates" };
@@ -57,6 +58,7 @@ function sensiboGetData() {
       var sensiboFanLevel = roomPath.acState.fanLevel;
       var status = decodedData.status;
 
+      //Jeigu gavo visus duomenis, informuoju vartotoją, jog nustatymai gauti
       if (status == "success") {
         document.getElementById("answer-sensibo").classList.add("green-text");
         document.getElementById("answer-sensibo").innerHTML =

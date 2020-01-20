@@ -1,3 +1,4 @@
+//Siunčia Netatmo duomenis į serverį
 function netatmoSend(settings) {
 
     logFormatter("  Netatmo duomenys siunčiami serveriui  ");
@@ -18,6 +19,7 @@ function netatmoSend(settings) {
       var decodedData = JSON.parse(data);
       var status = decodedData.status;
 
+      //Jeigu duomenys gauti, informuoja vartotoją
       if (status == "ok"){
         document.getElementById("answer-netatmo").classList.add("green-text");
         document.getElementById("answer-netatmo").innerHTML = "<p>Netatmo serveriui užklausa sėkmingai išsiūsta</p>";

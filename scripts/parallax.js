@@ -1,6 +1,7 @@
+//Paralax nustatymai
 function parallax(){
 
-$('.page-1').parallaxBackground({
+$('.paralax').parallaxBackground({
 parallaxBgImage    :'images/winter2.jpg',
 parallaxBgPosition :'center center',
 parallaxBgRepeat   :'no-repeat',

@@ -1,3 +1,4 @@
+//Suformatuoja console.log antraštes
 function logFormatter(message) {
 
 var date = new Date();

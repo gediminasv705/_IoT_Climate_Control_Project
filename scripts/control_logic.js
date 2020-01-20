@@ -1,3 +1,5 @@
+//Vartotojo pasirinkimų gavimas, pagal logiką siuntimas į serverį
+
 function controlLogic() {
   var controlMode = document.getElementById("select-control-mode");
   var climateMode = document.getElementById("select-climate-mode");

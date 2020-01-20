@@ -1,9 +1,10 @@
+//Gaunu duomenis iš Netatmo serverio
 function netatmoGetData() {
   logFormatter("  Netatmo duomenys atnaujinami  ");
  
 
   netatmoInfo();
-  //netatmoMeasurements();
+  // netatmoMeasurements();
 
   function netatmoInfo() {
 
@@ -35,6 +36,7 @@ function netatmoGetData() {
         decodedData.body.home.modules["1"].battery_state;
       var netatmoOutputState = decodedData.body.home.modules["1"].boiler_status;
 
+      //Jeigu duomenys sėkmingai gauti, keičiu prietaiso ikonos spalvą ir išvedu vartotojui būseną
       if (netatmoStatus == "ok") {
         document.getElementById("answer-netatmo").classList.add("green-text");
         document.getElementById("answer-netatmo").innerHTML =
@@ -49,6 +51,7 @@ function netatmoGetData() {
         document.getElementById("netatmo-measured-temp").innerHTML =
           netatmoMeasuredTemp + "°C";
 
+        //Jeigu pasikeitė matavimo reikšmė, vartotojas informuojamas background mirgsėjimu
         if (
           netatmoSetpointTemp + "°C" !=
           document.getElementById("netatmo-set-temp").innerHTML
@@ -71,6 +74,7 @@ function netatmoGetData() {
           "netatmo-battery-level"
         ).innerHTML = netatmoBatteryLevel;
 
+        //Jeigu pasikeitė matavimo reikšmė, vartotojas informuojamas background mirgsėjimu
         if (netatmoOutputState) {
           if (
             "Output is On" !=
@@ -108,14 +112,16 @@ function netatmoGetData() {
     });
   }
 
+  //Gaunu laikotarpio matavimo duomenis, kuriuos naudoju grafike
   function netatmoMeasurements() {
     var url = "scripts/netatmo_getter.php";
-    var getPath = "/api/homestatus";
+    var getPath = "/api/getroommeasure";
     var obj = {
       scope: "read_thermostat",
       path: getPath,
       reason: "measurements"
     };
+
     var myJSON = JSON.stringify(obj);
 
     $.post(url, { myData: myJSON }, function(data) {

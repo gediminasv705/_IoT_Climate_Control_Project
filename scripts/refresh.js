@@ -1,3 +1,4 @@
+//Atnaujina duomenis ir informuoja vartotoją
 function refresh(){
 
     document.getElementById("answer-sensibo").classList.remove("green-text");

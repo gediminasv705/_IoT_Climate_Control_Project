@@ -3,6 +3,10 @@
   font-family: sans-serif;
 }
 
+input{
+  z-index: 1;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,13 +19,19 @@ p {
   padding: 10px;
 }
 
-/* test */
+.paralax{
+  position: absolute!important;
+  width: 100%;
+  min-height: 980px;
+}
 
 .top-row-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  position: relative;
+  z-index: 10;
 }
 .top-row {
   height: 300px;
@@ -88,6 +98,12 @@ p {
 .login {
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 50;
+  position: relative;
+}
+
+.search-wrapper{
+  position: relative;
+  z-index: 50;
 }
 
 .meniu {
@@ -107,6 +123,10 @@ p {
 }
 
 #navbar {
+  z-index: 99;
+}
+
+.nav-wrapper{
   z-index: 999;
 }
 
@@ -511,7 +531,7 @@ p.range-field {
 
 .graph-area {
   background-color: rgba(255, 255, 255, 0.87);
-  height: 800px;
+  height: 720px;
 }
 
 .graph-area h5 {

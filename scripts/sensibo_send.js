@@ -1,3 +1,5 @@
+//siunčiu vartotojo nustatymus į Sensibo serverį
+
 function sensiboSend(settings) {
 
     logFormatter("  Sensibo duomenys siunčiami serveriui  ");

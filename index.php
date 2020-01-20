@@ -3,8 +3,9 @@
 <!-- Main page -->
 
 <div id="page-1" class="page-1">
-
     <header>
+    
+    <div class="paralax"></div>
         <div class="container top-row" id="top-row">
 
             <div class='top-row-wrapper'>
@@ -36,9 +37,8 @@
             </div>
 
         </div>
-
+        
         <nav id="navbar">
-
             <div class="nav-wrapper orange darken-4">
                 <div class="container">
                     <a id="navbar-logo" href="#" class="brand-logo left"><i class="material-icons">beach_access</i>G climate</a>
