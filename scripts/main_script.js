@@ -8,7 +8,6 @@ $('document').ready(function () {
     parallax();
     chartPlugin();
     chart();
-
 });
 
 

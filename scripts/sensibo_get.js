@@ -65,6 +65,7 @@ function sensiboGetData() {
         document.getElementById("answer-sensibo").innerHTML = "<p>Sensibo nustatymai sėkmingai gauti</p>";
         document.getElementById("sensibo-status").innerHTML = "Connected";
         document.getElementById("sensibo-set-temp").innerHTML = sensiboTargetTemp + "°" + sensiboTempUnit;
+        sensiboBlink();
         document.getElementById("sensibo-mode").innerHTML = sensiboMode;
         document.getElementById("sensibo-fan-level").innerHTML = sensiboFanLevel;
         document.getElementById("sensibo-status-icon").classList.add("green-text");

@@ -232,7 +232,7 @@
                 <p>Target temperature</p>
             </div>
 
-            <div class="sensibo-set-temp-res  grid-center">
+            <div  id="sensibo-set-temp-div" class="sensibo-set-temp-res  grid-center">
                 <p id="sensibo-set-temp"></p>
             </div>
 
@@ -272,7 +272,7 @@
             </div>
 
             <div class="netatmo-measured-temp grid-vertical-center">
-                <p id="netatmo-measured-temp"> </p>
+                <p id="netatmo-measured-temp"></p>
             </div>
 
             <div class="netatmo-humidity grid-vertical-center">
@@ -293,7 +293,7 @@
                 <p>Target temperature</p>
             </div>
 
-            <div class="netatmo-set-temp-res grid-center">
+            <div id="netatmo-set-temp-div" class="netatmo-set-temp-res grid-center">
                 <p id="netatmo-set-temp"></p>
             </div>
 

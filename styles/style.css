@@ -307,7 +307,7 @@ p.range-field {
 
 .sensibo-logo {
   grid-area: sensibo-logo;
-  background-color: rgb(211, 223, 159);
+  background-color: rgba(211, 223, 159);
 }
 
 .sensibo-logo h5 {
@@ -588,4 +588,24 @@ input[type="range"] + .thumb {
 }
 input[type="range"] + .thumb.active .value {
   color: rgb(0, 0, 0);
+}
+
+
+@keyframes blinking {
+  0%{
+    background-color: #ff3d50;
+  }
+  /* YOU CAN ADD MORE COLORS IN THE KEYFRAMES IF YOU WANT
+  50%{
+    background-color: #55d66b;
+    border: 5px solid #126620;
+  }
+  */
+  100%{
+    background-color: rgb(243, 229, 152);
+  }
+}
+
+.blink {
+  animation: blinking 1s infinite;
 }

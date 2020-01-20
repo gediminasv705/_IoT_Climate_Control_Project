@@ -13,6 +13,7 @@
 <script src="scripts/auto_control.js"></script>
 <script src="scripts/control_logic.js"></script>
 
+<script src="scripts/blink_animation.js"></script>
 <script src="scripts/chart_plugin.js"></script>
 <script src="scripts/chart_script.js"></script>
 <script src="scripts/log_formatter.js"></script>
