@@ -4,7 +4,6 @@ function netatmoGetData() {
  
 
   netatmoInfo();
-  // netatmoMeasurements();
 
   function netatmoInfo() {
 
@@ -108,28 +107,6 @@ function netatmoGetData() {
         document
           .getElementById("netatmo-status-icon")
           .classList.add("red-text");
-      }
-    });
-  }
-
-  //Gaunu laikotarpio matavimo duomenis, kuriuos naudoju grafike
-  function netatmoMeasurements() {
-    var url = "scripts/netatmo_getter.php";
-    var getPath = "/api/getroommeasure";
-    var obj = {
-      scope: "read_thermostat",
-      path: getPath,
-      reason: "measurements"
-    };
-
-    var myJSON = JSON.stringify(obj);
-
-    $.post(url, { myData: myJSON }, function(data) {
-      console.log(data);
-      decodedData = JSON.parse(data);
-
-      if (netatmoIsReachable) {
-      } else {
       }
     });
   }

@@ -1,13 +1,79 @@
-function chart(){
+
+document.getElementById("graph-answer").innerHTML = "Laukiama užklausos...";
+$("#refresh-graph").click(function() {
+  netatmoGraph();
+});
+
+netatmoGraph();
+
+  function Unix_timestamp(t)
+  {
+  var dt = new Date(t*1000);
+  var hr = dt.getHours();
+  var m = "0" + dt.getMinutes();
+  var s = "0" + dt.getSeconds();
+  return hr+ 'h';  
+  }
+
+  function netatmoGraph() {
+    document.getElementById("graph-answer").classList.remove("red-text");
+    document.getElementById("graph-answer").classList.remove("green-text");
+    document.getElementById("graph-answer").innerHTML = "Siunčiama užklausa...";
+
+    var url = "scripts/netatmo_getter.php";
+    var getPath = "/api/getroommeasure";
+    var obj = {
+      scope: "read_thermostat",
+      path: getPath,
+      reason: "graph_data"
+    };
+    var myJSON = JSON.stringify(obj);
+
+    $.post(url, { myData: myJSON }, function(data) {
+
+        decodedData = JSON.parse(data);
+
+        if (decodedData.status == 'ok'){
+            document.getElementById("graph-answer").innerHTML = "Duomenys gauti";
+            document.getElementById("graph-answer").classList.remove("red-text");
+            document.getElementById("graph-answer").classList.add("green-text");
+
+
+        
+        timeArray = [];
+        tempArray = [];
+
+        for (let [timeStamp, temperature] of Object.entries(decodedData.body)) {
+            //console.log(`${key}: ${value}`);
+            timeArray.push(Unix_timestamp(timeStamp));
+            tempArray.push(temperature['0']);
+
+          }
+
+        chart(timeArray,tempArray);
+
+        } else {
+            document.getElementById("graph-answer").innerHTML = "Serveris duomenų nepateikė";
+            document.getElementById("graph-answer").classList.remove("green-text");
+            document.getElementById("graph-answer").classList.add("red-text");
+        }
+      
+    });
+  }
+
+
+function chart(timeArray, tempArray){
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['1', '2', '3', '4', '5', '6', '7', '11', '20', '8', '11', '20', '20', '8', '11', '20', '20', '8', '11', '20'],
+        //labels: ['1', '5', '6', '8', '11', '20'],
+        labels: timeArray,
         datasets: [{
-            label: 'Netatmo measured temperature changes',
-            data: [22, 23, 24, 28.5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            label: 'Measured temperature changes',
+            //data: [12, 19, 3, 5, 2, 3],
+            data: tempArray,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -31,7 +97,10 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false,
+                    min: 20,
+                    max: 27,
+                    stepSize: 1
                 }
             }]
         }

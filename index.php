@@ -326,7 +326,17 @@
 
     <div class="container">
         <div class="graph-area">
-            <h5>Netatmo settings graph</h5>
+            <div class="graph-header">
+                <h5>Netatmo settings graph</h5>
+                <div class="graph-answer">
+                    <p id="graph-answer"></p>
+                </div>
+            </div>
+
+            <div class="refresh-graph">
+                <a id="refresh-graph" class="waves-effect waves-light btn-large button-confirm orange darken-4">Refresh graph<i class="material-icons right">autorenew</i></a>
+            </div>
+
             <canvas id="myChart" width="400" height="200"></canvas>
         </div>
     </div>
@@ -339,22 +349,7 @@
         <div class="about-us">
             <h5>Data log</h5>
             <div class="logged-data-wrapper">
-                <div class="logged-data">
-                    <p>[2020-01-22 16:48] Lorem ipsum dolor sit amet consectetur adipisi
-                        cing elit. Corporis iste esse ipsam corrupti nec
-                        essitatibus veniam, aut veritatis, nobis quaerat
-                        ipsum explicabo hic totam soluta molestias? Quae
-                        rat voluptatibus ipsam praesentium officia!</p>
-                    <p>[2020-01-22 16:55] Lorem ipsum dolor sit amet consectetur adipisi
-                        cing elit. Corporis iste esse ipsam corrupti nec
-                        essitatibus veniam, aut veritatis, nobis quaerat
-                        ipsum explicabo hic totam soluta molestias? Quae
-                        rat voluptatibus ipsam praesentium officia!</p>
-                    <p>[2020-01-22 18:30] Lorem ipsum dolor sit amet consectetur adipisi
-                        cing elit. Corporis iste esse ipsam corrupti nec
-                        essitatibus veniam, aut veritatis, nobis quaerat
-                        ipsum explicabo hic totam soluta molestias? Quae
-                        rat voluptatibus ipsam praesentium officia!</p>
+                <div id="data-logger" class="logged-data">
                 </div>
             </div>
         </div>

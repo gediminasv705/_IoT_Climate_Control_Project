@@ -20,6 +20,7 @@
 <script src="scripts/parallax.js"></script>
 <script src="scripts/navbar.js"></script>
 <script src="scripts/sensibo_get.js"></script>
+<script src="scripts/console_log.js"></script>
 <script src="scripts/main_script.js"></script>
 </body>
 
